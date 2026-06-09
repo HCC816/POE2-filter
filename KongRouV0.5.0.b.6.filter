@@ -1392,6 +1392,19 @@ MinimapIcon 1 Red Star
 SetFontSize 48
 DisableDropSound True
 
+##匠鍛符文-升級插槽中的符文
+Show
+Class "Augment"
+BaseType "Masterwork Rune"
+SetTextColor 255 220 120 255
+SetBorderColor 255 220 120 255
+SetBackgroundColor 84 34 34 255 
+CustomAlertSound "6_Have_treasure.mp3" 220
+PlayEffect Yellow 
+MinimapIcon 1 Yellow Circle
+SetFontSize 45
+DisableDropSound True
+
 ##探險助熔劑
 #奇術溶劑-升級符符文技能石系列
 Show
@@ -2215,94 +2228,178 @@ MinimapIcon 2 Cyan Triangle
 SetFontSize 37
 DisableDropSound True
 
-##液態情感(瞻妄)(抹油)
-#0.5版新液態強效情感
-#古老濃縮增幅液態憂鬱(紅寶擊中虛弱、藍寶擊中元素曝曬、綠寶石致盲)
-Show
-Class == "Stackable Currency"
-BaseType "Ancient Potent Liquid Melancholy" "Ancient Potent Liquid Ferocity" "Ancient Potent Liquid Contempt"
-SetTextColor 255 0 0 
-SetBorderColor 255 0 0 
-SetBackgroundColor 255 255 255 
-CustomAlertSound "7_Amazing_treasure.mp3" 270
-PlayEffect Red
-MinimapIcon 1 Red Star
-SetFontSize 48
-DisableDropSound True
-
-#增幅液態憂鬱(紅寶擊中虛弱、藍寶擊中元素曝曬、綠寶石致盲)
-Show
-Class == "Stackable Currency"
-BaseType "Potent Liquid Melancholy" "Potent Liquid Ferocity" "Potent Liquid Contempt"
-SetTextColor 255 0 0 
-SetBorderColor 255 0 0 
-SetBackgroundColor 255 255 255 
-PlayEffect Cyan
-MinimapIcon 2 Cyan Circle
-SetFontSize 45
-DisableDropSound True
-
-#0.5版古老的液態情感
-#古老濃縮液態情感
+#0.5版"遠古增幅"、"增幅"液態情感(特殊珠寶加工類)
+#S級:遠古增幅怨恨、遠古增幅蔑視、增幅怨恨、增幅蔑視
 Show
 Class = "Stackable Currency"
-BaseType "Ancient Concentrated Liquid"
+BaseType = "Ancient Potent Liquid Contempt" "Ancient Potent Liquid Ferocity" "Potent Liquid Contempt" "Potent Liquid Ferocity"
 SetTextColor 255 0 0 
 SetBorderColor 255 0 0 
 SetBackgroundColor 255 255 255 
-CustomAlertSound "7_Amazing_treasure.mp3" 270
+CustomAlertSound "7_Amazing_treasure.mp3" 220
 PlayEffect Red
 MinimapIcon 0 Red Star
 SetFontSize 50
 DisableDropSound True
 
-#其他古老液態情感 
+#A級:遠古增幅憂鬱、增幅憂鬱
+Show
+Class = "Stackable Currency"
+BaseType "Ancient Potent Liquid Melancholy" "Potent Liquid Melancholy"
+SetTextColor 204 102 0
+SetBorderColor 204 102 0
+SetBackgroundColor 255 255 255
+CustomAlertSound "6_Have_treasure.mp3" 200
+PlayEffect Red
+MinimapIcon 1 Red Star
+SetFontSize 46
+DisableDropSound True
+
+#其他"遠古增幅"、"增幅"液態情感 
+Show
+Class = "Stackable Currency"
+BaseType "Ancient Potent Liquid" "Potent Liquid" 
+SetTextColor 204 102 0
+SetBorderColor 204 102 0
+SetBackgroundColor 255 255 255
+CustomAlertSound "6_Have_treasure.mp3" 180
+PlayEffect Red
+MinimapIcon 2 Red Star
+SetFontSize 44
+DisableDropSound True
+
+#0.5版"遠古濃縮"、"遠古" "濃縮"液態情感(高級珠寶加工)
+#A級:遠古濃縮孤立、遠古濃縮苦難、遠古濃縮恐懼、遠古偏執、遠古厭惡、遠古忌妒
+Show
+Class = "Stackable Currency"
+BaseType "Ancient Concentrated Liquid Isolation" "Ancient Concentrated Liquid Suffering" "Ancient Concentrated Liquid Fear" "Ancient Liquid Paranoia" "Ancient Liquid Disgust"  "Ancient Liquid Envy" 
+SetTextColor 204 102 0
+SetBorderColor 204 102 0
+SetBackgroundColor 255 255 255
+CustomAlertSound "6_Have_treasure.mp3" 200
+PlayEffect Red
+MinimapIcon 1 Red Star
+SetFontSize 45
+DisableDropSound True
+
+#B級:遠古絕望
+Show
+Class = "Stackable Currency"
+BaseType "Ancient Liquid Despair" 
+SetTextColor 120 255 240
+SetBorderColor 120 255 240
+SetBackgroundColor 0 0 0
+CustomAlertSound "5_treasures.mp3" 250
+PlayEffect Red
+MinimapIcon 1 Red Star
+SetFontSize 42
+DisableDropSound True
+
+#其他"遠古濃縮"、"遠古"液態情感 
+Show
+Class = "Stackable Currency"
+BaseType "Ancient Concentrated Liquid" "Ancient Liquid"
+SetTextColor 120 255 240
+SetBorderColor 120 255 240
+SetBackgroundColor 0 0 0
+CustomAlertSound "5_treasures.mp3" 250
+PlayEffect Red
+MinimapIcon 2 Red Star
+SetFontSize 42
+DisableDropSound True
+
+#0.5版"遠古稀釋"液態情感(中級珠寶加工)
+#A級:遠古稀釋貪婪
+Show
+Class = "Stackable Currency"
+BaseType "Ancient Diluted Liquid Greed"
+SetTextColor 204 102 0
+SetBorderColor 204 102 0
+SetBackgroundColor 255 255 255
+CustomAlertSound "6_Have_treasure.mp3" 200
+PlayEffect Red
+MinimapIcon 1 Red Star
+SetFontSize 44
+DisableDropSound True
+
+#B級:遠古稀釋罪惡、遠古稀釋憤怒
+Show
+Class = "Stackable Currency"
+BaseType "Ancient Diluted Liquid Guilt" "Ancient Diluted Liquid Ire"
+SetTextColor 120 255 240
+SetBorderColor 120 255 240
+SetBackgroundColor 0 0 0
+CustomAlertSound "5_treasures.mp3" 250
+PlayEffect Red
+MinimapIcon 2 Red Star
+SetFontSize 42
+DisableDropSound True
+
+#其他"遠古稀釋"、液態情感 
+Show
+Class = "Stackable Currency"
+BaseType "Ancient Diluted Liquid" 
+SetTextColor 120 255 240
+SetBorderColor 120 255 240
+SetBackgroundColor 0 0 0
+CustomAlertSound "5_treasures.mp3" 250
+PlayEffect Red
+MinimapIcon 2 Red Star
+SetFontSize 42
+DisableDropSound True
+
+#0.5版"遠古"液態情感(時迭珠寶加工)
+#S級遠古液態情感
+#怨恨、蔑視
+Show
+Class = "Stackable Currency"
+BaseType = "Potent Liquid Contempt" "Potent Liquid Ferocity"
+SetTextColor 255 0 0 
+SetBorderColor 255 0 0 
+SetBackgroundColor 255 255 255 
+CustomAlertSound "7_Amazing_treasure.mp3" 220
+PlayEffect Red
+MinimapIcon 0 Red Star
+SetFontSize 50
+DisableDropSound True
+
+#A級遠古液態情感 
+#絕望、厭惡、忌妒、偏執
+Show
+Class = "Stackable Currency"
+BaseType "Ancient Liquid Despair" "Ancient Liquid Disgust" "Ancient Liquid Envy" "Ancient Liquid Parano"
+SetTextColor 204 102 0
+SetBorderColor 204 102 0
+SetBackgroundColor 255 255 255
+CustomAlertSound "6_Have_treasure.mp3" 200
+PlayEffect Red
+MinimapIcon 1 Red Star
+SetFontSize 45
+DisableDropSound True
+
+#其他遠古液態情感 
 Show
 Class = "Stackable Currency"
 BaseType "Ancient Liquid" 
 SetTextColor 204 102 0
 SetBorderColor 204 102 0
 SetBackgroundColor 255 255 255
-CustomAlertSound "6_Have_treasure.mp3" 220
+CustomAlertSound "6_Have_treasure.mp3" 180
 PlayEffect Red
 MinimapIcon 1 Red Star
 SetFontSize 45
 DisableDropSound True
 
-Show
-Class = "Stackable Currency"
-BaseType "Ancient Diluted"
-SetTextColor 204 102 0
-SetBorderColor 204 102 0
-SetBackgroundColor 255 255 255
-PlayEffect Cyan
-MinimapIcon 2 Cyan Circle
-SetFontSize 45
-DisableDropSound True
-
-# S 級濃縮液態情感 孤立 (+最大抗) 苦難(+盛怒/移速)
+#0.4版情感
+# S 級濃縮液態情感 孤立 (+最大抗) 苦難(+盛怒/移速)  恐懼
 #Currency Tier S:
 Show
 Class == "Stackable Currency"
-BaseType "Concentrated Liquid Isolation" "Concentrated Liquid Suffering" 
+BaseType "Concentrated Liquid Isolation" "Concentrated Liquid Suffering" "Concentrated Liquid Fear" 
 SetTextColor 255 0 0 
 SetBorderColor 255 0 0 
 SetBackgroundColor 255 255 255 
 CustomAlertSound "7_Amazing_treasure.mp3" 270
-PlayEffect Red
-MinimapIcon 0 Red Star
-SetFontSize 50
-DisableDropSound True
-
-#S 2級濃縮液態情感 恐懼 
-#Currency Tier A:Liquid
-Show
-Class == "Stackable Currency"
-BaseType "Concentrated Liquid Fear" 
-SetTextColor 204 102 0
-SetBorderColor 204 102 0
-SetBackgroundColor 255 255 255
-CustomAlertSound "6_Have_treasure.mp3" 250
 PlayEffect Red
 MinimapIcon 0 Red Star
 SetFontSize 50
@@ -2317,8 +2414,8 @@ SetBorderColor 120 255 240
 SetBackgroundColor 0 0 0
 CustomAlertSound "5_treasures.mp3" 250
 PlayEffect Red
-MinimapIcon 1 Red Star
-SetFontSize 47
+MinimapIcon 2 Red Star
+SetFontSize 42
 DisableDropSound True
 
 # B 級稀釋的液態情感 罪惡、貪婪、厭惡
@@ -2345,22 +2442,37 @@ SetBorderColor 120 255 240
 SetBackgroundColor 0 0 0
 CustomAlertSound "48_WOW_Distilled.mp3" 200
 PlayEffect Cyan
-MinimapIcon 1 Cyan Circle
-SetFontSize 45
+MinimapIcon 2 Cyan Circle
+SetFontSize 40
 DisableDropSound True
 
 ##催化劑
-#0.5版催化劑
+#0.5版精製催化劑
+#S級:精製適性、精製掠奪
 Show
 Class == "Stackable Currency"
-BaseType "Flesh Catalyst" "Neural Catalyst" 
+BaseType "Refined Adaptive Catalyst" "Refined Reaver Catalyst"
 SetTextColor 255 0 0 
 SetBorderColor 255 0 0 
 SetBackgroundColor 255 255 255 
 CustomAlertSound "7_Amazing_treasure.mp3" 270
 PlayEffect Cyan
+MinimapIcon 0 Cyan Circle
+SetFontSize 48
+DisableDropSound True
+
+#0.5版催化劑
+#A級:精製飛掠、精製嘶鳴、精製夏烏拉、精製艾許、精製托沃、精製索伏、精製烏爾尼多、精製甲殼、精製神經、精製血肉
+Show
+Class == "Stackable Currency"
+BaseType "Refined Skittering Catalyst" "Refined Sibilant Catalyst"  "Refined Chayula's Catalyst" "Refined Esh's Catalyst" "Refined Tul's Catalyst" "Refined Xoph's Catalyst" "Refined Uul-Netol's Catalyst" "Refined Carapace Catalyst" "Refined Neural Catalyst" "Refined Flesh Catalyst"
+SetTextColor 120 255 240
+SetBorderColor 255 0 0 
+SetBackgroundColor 0 0 0
+CustomAlertSound "6_Have_treasure.mp3" 200
+PlayEffect Cyan
 MinimapIcon 1 Cyan Circle
-SetFontSize 45
+SetFontSize 44
 DisableDropSound True
 
 #紅寶石催化(火焰)、石英催化(施法品質) 電氣石(屬性品質) 軟玉(防護值品質)
@@ -2380,28 +2492,14 @@ DisableDropSound True
 #掠奪、閃電、火焰
 # Currency Tier A:
 Show
-AreaLevel <= 79
 Class == "Stackable Currency"
 BaseType "Reaver Catalyst" "Esh's Catalyst" "Xoph's Catalyst"
-SetTextColor 255 0 0 
+SetTextColor 120 255 240
 SetBorderColor 255 0 0 
-SetBackgroundColor 255 255 255 
+SetBackgroundColor 0 0 0
 CustomAlertSound "6_Have_treasure.mp3" 200
 PlayEffect Cyan
-MinimapIcon 0 Cyan Circle
-SetFontSize 47
-DisableDropSound True
-
-Show
-AreaLevel >= 80
-Class == "Stackable Currency"
-BaseType "Reaver Catalyst" "Esh's Catalyst" "Xoph's Catalyst"
-SetTextColor 255 0 0 
-SetBorderColor 255 0 0 
-SetBackgroundColor 255 255 255 
-CustomAlertSound "5_treasures.mp3" 200
-PlayEffect Cyan
-MinimapIcon 0 Cyan Circle
+MinimapIcon 1 Cyan Circle
 SetFontSize 44
 DisableDropSound True
 
@@ -2409,7 +2507,6 @@ DisableDropSound True
 #嘶鳴、物理、冰冷、甲殼
 # Currency Tier B:"Catalyst" 
 Show
-AreaLevel <= 79
 Class == "Stackable Currency"
 BaseType "Sibilant Catalyst" "Uul-Netol's Catalyst" "Tul's Catalyst" "Carapace Catalyst"
 SetTextColor 120 255 240
@@ -2417,19 +2514,8 @@ SetBorderColor 255 0 0
 SetBackgroundColor 0 0 0
 CustomAlertSound "5_treasures.mp3" 250
 PlayEffect Cyan
-MinimapIcon 1 Cyan Circle
-SetFontSize 44
-DisableDropSound True
-
-Show
-AreaLevel >= 80
-Class == "Stackable Currency"
-BaseType "Sibilant Catalyst" "Uul-Netol's Catalyst" "Tul's Catalyst" "Carapace Catalyst"
-SetTextColor 120 255 240
-SetBorderColor 255 0 0 
-SetBackgroundColor 0 0 0 
-PlayEffect Cyan
-SetFontSize 40
+MinimapIcon 2 Cyan Circle
+SetFontSize 42
 DisableDropSound True
 
 #其他催化劑
@@ -2441,7 +2527,7 @@ SetBorderColor 120 255 240
 SetBackgroundColor 0 0 0
 PlayEffect Cyan
 MinimapIcon 2 Cyan Circle
-SetFontSize 38
+SetFontSize 40
 DisableDropSound True
 
 ###聯盟碎片類通貨(門票)###
@@ -4564,6 +4650,19 @@ MinimapIcon 0 Red Star
 SetFontSize 50
 DisableDropSound True
 
+#阿斯垂德的創造(所有裝備: 可以有1個額外工藝詞綴)
+Show 
+Class "Augment"
+BaseType "Astrid's Creativity"
+SetTextColor 255 0 0 
+SetBorderColor 255 0 0 
+SetBackgroundColor 255 255 255 
+CustomAlertSound "7_Amazing_treasure.mp3" 250
+PlayEffect Red
+MinimapIcon 0 Red Star
+SetFontSize 48
+DisableDropSound True
+
 #機制傳奇王符文
 Show 
 Class "Augment"
@@ -4706,20 +4805,6 @@ DisableDropSound True
 Show 
 Class "Augment"
 BaseType "Ward Rune"
-Rarity <= Magic
-SetTextColor 255 220 220 
-SetBorderColor 255 255 255 
-SetBackgroundColor 107 72 179 
-CustomAlertSound "62_T2Currency.mp3 " 200
-SetFontSize 40
-PlayEffect Purple
-MinimapIcon 2 Purple Diamond
-DisableDropSound True
-
-#匠緞(升級插槽中的符文)
-Show 
-Class "Augment"
-BaseType "Masterwork Rune"
 Rarity <= Magic
 SetTextColor 255 220 220 
 SetBorderColor 255 255 255 
@@ -9038,7 +9123,7 @@ DisableDropSound True
 
 #二個以上零散金幣	
 Show
-StackSize >= 2 
+StackSize >= 1
 Class == "Stackable Currency"
 BaseType == "Gold"
 SetTextColor 255 222 89
