@@ -1,7 +1,7 @@
 #===============================================================================================================
 #===============================================================================================================
 ###只想吃爌肉 物品篩選器
-## 版 本: KongRouV0.5.0.b.6 2026/06/6
+## 版 本: KongRouV0.5.1.1 2026/06/9
 ## 作 者: kong_rou_fan (Twitch)
 ## 特 色:依地圖等級自動調整掉落，讓特殊基底高亮顯示，並整合PoE1、暗黑破壞神、特殊音效
 ## 說 明:適用新手拓荒、地圖升階、高等速刷、並可自訂遮蔽規則
@@ -32,6 +32,13 @@
 #####  感謝~你的回報地支持就是最好的動力! #####
 #======================
 # [更新說明] Update instructions
+# 版 本:KongRouV0.5.1.1 2026/06/9
+#1.修正顯示匠鍛符文-升級插槽中的符文
+#2.調整1元金幣錯誤
+#3.調整遠古濃縮、濃縮、遠古增幅、增幅、遠古稀釋液態依照經濟調整顯示.
+#4.調整精製催化劑依照經濟調整顯示
+#5.新增高價顯示 阿斯垂德的創造
+
 # 版 本:KongRouV0.5.0.b.6 2026/06/6
 #1.調整傳奇碑牌音效包含偉大計劃、天堂異象、始料未及的後果、信仰的自由 維持音效驚人的財寶，其他沒價格傳奇碑牌改為寶藏
 #2.調大主要機制斷片顯示，並微調顏色
@@ -44,7 +51,7 @@
 #特殊魔法 淺藍框藍綠底
 #一般稀有 暗灰底
 #低階基底 灰色底
-#5.新增顯示新基護盾衣服、腰帶、
+#5.調整新基底衣服、腰帶、戒指顯示
 
 # 版 本:KongRouV0.5.0.b.5 2026/06/4
 #1.調整碑牌顏色為黑色方塊+藍色字
@@ -863,6 +870,7 @@ SetBorderColor 180 180 180
 SetBackgroundColor 240 100 35
 CustomAlertSound "0_Guru Lingbo.mp3" 120 
 MinimapIcon 2 Yellow Circle
+PlayEffect Yellow 
 SetFontSize 42
 DisableDropSound True
 
@@ -914,6 +922,7 @@ BaseType == "Gemcutter's Prism"
 SetTextColor 244 190 98
 SetBorderColor 244 190 98
 SetBackgroundColor 76 51 12
+PlayEffect Yellow 
 SetFontSize 40
 DisableDropSound True
 
@@ -965,6 +974,7 @@ BaseType == "Vaal Orb"
 SetTextColor 244 190 98
 SetBorderColor 244 190 98
 SetBackgroundColor 76 51 12
+PlayEffect Yellow
 SetFontSize 40
 DisableDropSound True
 
@@ -1000,6 +1010,7 @@ Class == "Stackable Currency"
 BaseType == "Orb of Alchemy" 
 SetTextColor 255 207 132
 SetBackgroundColor 76 51 12
+PlayEffect Yellow
 SetFontSize 40
 DisableDropSound True
 
@@ -1191,7 +1202,7 @@ SetFontSize 38
 DisableDropSound True
 
 Show
-AreaLevel <= 79
+AreaLevel <= 80
 Class == "Stackable Currency"
 BaseType == "Orb of Augmentation" "Orb of Transmutation" 
 SetTextColor 212 198 175
@@ -1338,9 +1349,9 @@ SetTextColor 255 220 120 255
 SetBorderColor 255 220 120 255
 SetBackgroundColor 84 34 34 255 
 CustomAlertSound "6_Have_treasure.mp3" 220
-PlayEffect Yellow 
-MinimapIcon 2 Yellow Circle
-SetFontSize 45
+PlayEffect Yellow
+MinimapIcon 1 Yellow Circle
+SetFontSize 44
 DisableDropSound True
 
 #古老護衛盾
@@ -1405,7 +1416,7 @@ MinimapIcon 1 Yellow Circle
 SetFontSize 45
 DisableDropSound True
 
-##探險助熔劑
+##探險助熔劑"Masterwork Rune"
 #奇術溶劑-升級符符文技能石系列
 Show
 Class "Stackable Currency"
@@ -1469,10 +1480,10 @@ PlayEffect Yellow
 SetFontSize 42
 DisableDropSound True
 
-#卓越維里西姆、阿德爾的傳奇徵兆
+#卓越維里西姆
 Show
 Class "Stackable Currency"
-BaseType = "Exceptional Verisium" "Aldur's Saga"
+BaseType = "Exceptional Verisium" 
 SetTextColor 255 220 120 255
 SetBorderColor 255 220 120 255
 SetBackgroundColor 84 34 34 255
@@ -1495,10 +1506,10 @@ MinimapIcon 1 Yellow Circle
 SetFontSize 45
 DisableDropSound True
 
-#奧爾羅斯的烈陽之徽  奧爾羅斯的傳奇徵兆
+#奧爾羅斯的烈陽之徽  奧爾羅斯的傳奇徵兆 阿德爾的傳奇徵兆
 Show
 Class "Stackable Currency"
-BaseType = "Olroth's Crest of the Sun" "Olroth's Saga"
+BaseType = "Olroth's Crest of the Sun" "Olroth's Saga" "Aldur's Saga"
 SetTextColor 255 0 0 
 SetBorderColor 255 0 0 
 SetBackgroundColor 255 255 255 
@@ -1576,10 +1587,10 @@ SetFontSize 48
 DisableDropSound True
 
 #高級符文合金
-#煥彩 、秘能合金(頭手範圍/鞋精魂、法杖+1灌注) 延展合金(存在感範圍/法力消耗效率/+1召喚物) 
+#煥彩 、秘能合金(頭手範圍/鞋精魂、法杖+1灌注) 延展合金(存在感範圍/法力消耗效率/+1召喚物) 匠鍛符文
 Show
 Class "Stackable Currency"
-BaseType = "Prismatic Alloy" "Mystic Alloy" "Expansive Alloy"  
+BaseType = "Prismatic Alloy" "Mystic Alloy" "Expansive Alloy" "Masterwork Rune"
 SetTextColor 255 220 120 255
 SetBorderColor 255 220 120 255
 SetBackgroundColor 84 34 34 255
@@ -2632,10 +2643,10 @@ PlayEffect Pink
 MinimapIcon 1 Pink Star
 DisableDropSound True
 
-#高亮SS級特殊輔助寶石(族裔輔助) 達拉的渴望(技能+1)、萊基亞塔的流動(怪元素抗顛倒) 烏爾尼多的擁抱( 40% 物理傷害的額外混沌傷害)
+#高亮SS級特殊輔助寶石(族裔輔助) 達拉的渴望(技能+1)、萊基亞塔的流動(怪元素抗顛倒) 烏爾尼多的擁抱( 40% 物理傷害的額外混沌傷害) 卡洛翰的決心(攻擊暴擊率會二分)
 Show 
 Class == "Skill Gems" "Support Gems"
-BaseType == "Dialla's Desire" "Rigwald's Ferocity" "Uul-Netol's Embrace"
+BaseType == "Dialla's Desire" "Rigwald's Ferocity" "Uul-Netol's Embrace" "Garukhan's Resolve"
 SetFontSize 50
 SetTextColor 255 0 0 
 SetBorderColor 0 255 0 
@@ -2648,7 +2659,7 @@ DisableDropSound True
 #高亮S級特殊輔助寶石(族裔輔助) 
 Show 
 Class == "Skill Gems" "Support Gems"
-BaseType == "Atalui's Bloodletting" "Brutus' Brain" "Dialla's Desire" "Esh's Radiance" "Rakiata's Flow" "Tul's Stillness" "Uhtred's Augury" "Uhtred's Omen" "Uul-Netol's Embrace"
+BaseType == "Vorana's Siege" "Atalui's Bloodletting" "Brutus' Brain" "Dialla's Desire" "Esh's Radiance" "Rakiata's Flow" "Tul's Stillness" "Uhtred's Augury" "Uhtred's Omen" "Uul-Netol's Embrace"
 SetFontSize 47
 SetTextColor 255 0 0 
 SetBorderColor 0 255 0 
@@ -2661,7 +2672,7 @@ DisableDropSound True
 #高亮A級特殊輔助寶石(族裔輔助)
 Show 
 Class == "Skill Gems" "Support Gems"
-BaseType == "Amanamu's Tithe" "Arbiter's Ignition" "Arjun's Medal" "Garukhan's Resolve" "Ixchel's Torment" "Kalisa's Crescendo" "Ratha's Assault" "Romira's Requital" "Uhtred's Exodus" "Xoph's Pyre"
+BaseType == "Amanamu's Tithe" "Arbiter's Ignition" "Arjun's Medal" "Ixchel's Torment" "Kalisa's Crescendo" "Ratha's Assault" "Romira's Requital" "Uhtred's Exodus" "Xoph's Pyre"
 SetFontSize 45
 SetTextColor 25 24 20
 SetBorderColor 176 23 31
@@ -2861,7 +2872,7 @@ MinimapIcon 1 Red Circle
 SetFontSize 44
 DisableDropSound True
 
-#生命藥劑物等81以上，且品質15%以上
+#生命藥劑物等81以上，且品質5%以上
 Show
 ItemLevel >= 81
 Quality >= 15
@@ -4408,20 +4419,67 @@ MinimapIcon 1 White Diamond
 SetFontSize 42
 DisableDropSound True
 
-#顯示物等50以上白色"重革腰帶" "實用腰帶"
+#顯示物等50以上白色"重革腰帶" (機會石點獵首用)
 Show 
 Corrupted False
 Mirrored False
 ItemLevel >= 50
 Rarity Normal
 Class "Belts"
-BaseType "Heavy Belt" "Utility Belt"
+BaseType "Heavy Belt"
 SetBorderColor 255 0 0
 SetBackgroundColor 10 10 70 
 CustomAlertSound "5_treasures.mp3" 220
 PlayEffect Red
 MinimapIcon 1 Red Diamond
 SetFontSize 47
+DisableDropSound True
+
+#顯示物等50以上白色級實用腰帶 雙層腰帶 長腰帶  "Double Belt" "Long Belt" 
+Show 
+Corrupted False
+Mirrored False
+Class "Belts"
+AreaLevel <= 74
+ItemLevel >= 50
+Rarity Normal
+BaseType = "Utility Belt"
+SetBorderColor 255 255 153
+SetBackgroundColor 10 10 70 
+PlayEffect White
+MinimapIcon 1 White Diamond
+CustomAlertSound "6_Have_treasure.mp3" 250
+SetFontSize 50
+DisableDropSound True
+
+Show 
+Corrupted False
+Mirrored False
+Class "Belts"
+AreaLevel <= 78
+ItemLevel >= 50
+Rarity Normal
+BaseType = "Utility Belt"
+SetBorderColor 255 255 153
+SetBackgroundColor 10 10 70 
+PlayEffect White
+MinimapIcon 1 White Diamond
+SetFontSize 45
+DisableDropSound True
+
+Show 
+Corrupted False
+Mirrored False
+Class "Belts"
+AreaLevel >= 79
+ItemLevel >= 50
+Rarity Normal
+BaseType = "Utility Belt"
+SetBorderColor 255 255 153
+SetBackgroundColor 10 10 70 
+PlayEffect White
+MinimapIcon 1 White Diamond
+SetFontSize 42
 DisableDropSound True
 
 #顯示物等31以上白色"華麗腰帶" (機會石點瑞斯拉薩之纏用)
@@ -4648,7 +4706,7 @@ CustomAlertSound "7_Amazing_treasure.mp3" 200
 PlayEffect Red
 MinimapIcon 0 Red Star
 SetFontSize 50
-DisableDropSound True
+DisableDropSound 
 
 #阿斯垂德的創造(所有裝備: 可以有1個額外工藝詞綴)
 Show 
@@ -4894,11 +4952,10 @@ SetFontSize 50
 DisableDropSound True
 
 ##魔偶S1級
-## 席里斯魔偶(手套+8%攻擊速度)
-#Special S1 Tier Talisman
+## 席里斯魔偶(手套+8%攻擊速度) 翔鷹魔偶(權杖: 增加12%盟友的攻擊速度) 克雷頓魔偶(15%顆額外狂怒)
 Show 
 Class "Augment"
-BaseType "Idol of Sirrius"
+BaseType "Idol of Sirrius" "Hawk Idol" "Idol of Kraityn"
 Rarity <= Magic
 SetTextColor 255 0 0 
 SetBorderColor 255 0 0 
@@ -4941,12 +4998,13 @@ PlayEffect Red
 MinimapIcon 1 Cyan Diamond
 DisableDropSound True
 
-##狐狸、(技能品質2%)、特盧達納(+1中毒)、埃格林(詛咒敵人承受5%)
 #Special A Tier Talisman
 #魔偶A級
+##狐狸、(技能品質2%)、特盧達納(+1中毒)、埃格林(詛咒敵人承受5%) 
+##0.5版白鼬魔偶(25%盟友生命) 花豹魔偶(召喚+20%混沌抗) 斯克魔偶(盟友擊中1盛怒) 阿莉亞魔偶((15%顆額外暴擊球)
 Show 
 Class "Augment"
-BaseType "Fox" "Thruldana" "Egrin"
+BaseType "Fox" "Thruldana" "Egrin" "Stoat Idol" "Panther Idol" "Idol of Silk" "Idol of Alira"
 Rarity <= Magic
 SetTextColor 255 255 255
 SetBorderColor 210 210 255
@@ -6832,6 +6890,44 @@ BaseType == "Ornate Ringmail" "Grasping Mail" "Primal Markings"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
 # CustomAlertSound "36_Heavy Armor.mp3" 180
+PlayEffect Blue
+MinimapIcon 1 Blue Diamond
+SetFontSize 45
+
+##0.5版符鍛、符煉全系列
+#"Runeforged" "Runemastered" 
+#一般低物等
+Show
+Corrupted False
+Mirrored False
+ItemLevel <= 70
+BaseType "Runeforged" "Runemastered"
+SetBorderColor 153 204 255
+SetBackgroundColor 10 10 70
+PlayEffect Blue
+MinimapIcon 2 Blue Diamond
+SetFontSize 42
+
+#一般物等
+Show
+Corrupted False
+Mirrored False
+ItemLevel <= 80
+BaseType "Runeforged" "Runemastered"
+SetBorderColor 153 204 255
+SetBackgroundColor 10 10 70
+PlayEffect Blue
+MinimapIcon 2 Blue Diamond
+SetFontSize 42
+
+#高物等
+Show
+Corrupted False
+Mirrored False
+ItemLevel >= 81
+BaseType "Runeforged" "Runemastered"
+SetBorderColor 153 204 255
+SetBackgroundColor 10 10 70
 PlayEffect Blue
 MinimapIcon 1 Blue Diamond
 SetFontSize 45
@@ -9123,7 +9219,7 @@ DisableDropSound True
 
 #二個以上零散金幣	
 Show
-StackSize >= 1
+StackSize >= 1 
 Class == "Stackable Currency"
 BaseType == "Gold"
 SetTextColor 255 222 89
@@ -9715,12 +9811,12 @@ Rarity = Rare
 SetBorderColor 218 165 32
 SetFontSize 42
 
-#地圖階段顯示其餘高物等稀有武器、防具
+#地圖階段顯示其餘高物等稀有武器、防具 (自訂義)
 Show
 ItemLevel >= 80
 AreaLevel < 80
 Rarity = Rare
-Class "Talismans" "Sceptres" "Gloves" "Boots" "Body Armours" "Helmets"
+Class "Quarterstaves" "Talismans" "Gloves" "Boots" "Body Armours" "Helmets"
 SetBorderColor 64 64 64
 SetBorderColor 218 165 32
 SetFontSize 40
@@ -9729,16 +9825,16 @@ Hide
 ItemLevel >= 80
 AreaLevel < 80
 Rarity = Rare
-Class == "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Spears"
+Class ==  "Sceptres" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Crossbows" "Quivers" "Shields" "Foci" "Spears"
 SetBorderColor 64 64 64
 SetBorderColor 218 165 32
 SetFontSize 40
 
-#地圖階段顯示其餘一般稀有武器、防具
+#地圖階段顯示其餘一般稀有武器、防具 (自訂義)
 Show
 AreaLevel < 80
 Rarity = Rare
-Class "Talismans" "Sceptres" "Gloves" "Boots" "Body Armours" "Helmets"
+Class "Quarterstaves" "Talismans" "Gloves" "Boots" "Body Armours" "Helmets"
 SetBorderColor 153 204 255
 SetBackgroundColor 108 108 108
 SetFontSize 36
@@ -9746,7 +9842,7 @@ SetFontSize 36
 Hide
 AreaLevel < 80
 Rarity = Rare
-Class == "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Spears"
+Class ==  "Sceptres" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Crossbows" "Quivers" "Shields" "Foci" "Spears"
 SetBorderColor 153 204 255
 SetBackgroundColor 108 108 108
 SetFontSize 36
@@ -10082,24 +10178,24 @@ SetFontSize 32
 
 # B2級通貨 巧匠石(打孔)
 # Currency Tier B2: "Artificer's Orb"
-Hide
-AreaLevel >= 81
-Class == "Stackable Currency"
-BaseType == "Artificer's Orb"
-SetFontSize 38
-DisableDropSound True
+#Hide
+#AreaLevel >= 80
+#Class == "Stackable Currency"
+#BaseType == "Artificer's Orb"
+#SetFontSize 38
+#DisableDropSound True
 
 # B3級通貨 玻璃彈珠
 # Currency Tier B3:"Glassblower's Bauble"  
-Hide
-AreaLevel >= 80
-Class == "Stackable Currency"
-BaseType == "Glassblower's Bauble" 
-SetTextColor 255 207 132
-SetBorderColor 140 140 0
-SetBackgroundColor 76 51 12
-SetFontSize 38
-DisableDropSound True
+#Hide
+#AreaLevel >= 80
+#Class == "Stackable Currency"
+#BaseType == "Glassblower's Bauble" 
+#SetTextColor 255 207 132
+#SetBorderColor 140 140 0
+#SetBackgroundColor 76 51 12
+#SetFontSize 38
+#DisableDropSound True
 
 # B3級通貨 護甲片、磨刀石
 # Currency Tier B3: "Armourer's Scrap" "Blacksmith's Whetstone"
@@ -10112,23 +10208,23 @@ DisableDropSound True
 
 # C1級通貨 奧術蝕刻師(法杖磨刀石)
 # Currency Tier C1: "Arcanist's Etcher" 
-Hide
-AreaLevel >= 80
-Class == "Stackable Currency"
-BaseType == "Arcanist's Etcher" "Blacksmith's Whetstone"
-SetTextColor 255 207 132
-SetBorderColor 140 140 0
-SetBackgroundColor 76 51 12
-SetFontSize 35
-DisableDropSound True
+#Hide
+#AreaLevel >= 80
+#Class == "Stackable Currency"
+#BaseType == "Arcanist's Etcher" "Blacksmith's Whetstone"
+#SetTextColor 255 207 132
+#SetBorderColor 140 140 0
+#SetBackgroundColor 76 51 12
+#SetFontSize 35
+#DisableDropSound True
   
 # C2級通貨 增幅石、蛻變石 
 # Currency Tier C2: "Orb of Augmentation" "Orb of Transmutation" 
 Hide
-AreaLevel >= 79
+AreaLevel >= 81
 Class == "Stackable Currency"
 BaseType == "Orb of Augmentation" "Orb of Transmutation" 
-SetFontSize 30
+SetFontSize 34
 DisableDropSound True
 
 #------------------------------------
