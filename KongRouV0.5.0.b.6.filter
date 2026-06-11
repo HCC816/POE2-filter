@@ -11221,9 +11221,15 @@ DisableDropSound True
 #全域-地圖階段顯示稀有一般武器、防具 (預設開啟)
 ## Uncomment this rule to Show  "Expert"  in high level < 79 zones
 Show
+AreaLevel >= 79
+Rarity = Rare
+Class "Quarterstaves" "Talismans" "Gloves" "Boots" "Body Armours" "Helmets"
+SetFontSize 35
+
+Hide
 AreaLevel <= 79
 Rarity = Rare
-Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
+Class ==  "Sceptres" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" 
 SetFontSize 35
 
 #全域-地圖階段顯示稀有飾品、腰帶(預設開啟)
@@ -11240,8 +11246,15 @@ SetFontSize 37
 Show
 AreaLevel >= 80
 Rarity = Rare
-Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
+Class "Quarterstaves" "Talismans" "Gloves" "Boots" "Body Armours" "Helmets"
 SetFontSize 30
+
+Hide
+AreaLevel >= 80
+Rarity = Rare
+Class ==  "Sceptres" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" 
+SetFontSize 30
+
 
 #全域-速刷80以上顯示稀有一般飾品、腰帶(預設開啟)
 #如果前面已設定遮蔽則不會顯示
