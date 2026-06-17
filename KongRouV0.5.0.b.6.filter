@@ -1,7 +1,7 @@
 #===============================================================================================================
 #===============================================================================================================
 ###只想吃爌肉 物品篩選器
-## 版 本: KongRouV0.5.1.1 2026/06/9
+## 版 本: KongRouV0.5.1.5 2026/06/11
 ## 作 者: kong_rou_fan (Twitch)
 ## 特 色:依地圖等級自動調整掉落，讓特殊基底高亮顯示，並整合PoE1、暗黑破壞神、特殊音效
 ## 說 明:適用新手拓荒、地圖升階、高等速刷、並可自訂遮蔽規則
@@ -32,6 +32,31 @@
 #####  感謝~你的回報地支持就是最好的動力! #####
 #======================
 # [更新說明] Update instructions
+# 版 本:KongRouV0.5.1.5 2026/06/11
+#1.下調特殊武器基底改成81+白色/魔法級縮小38顯示並移除亮光減少光害，但純智、敏智系列還保有藍光
+#2.下調特殊防具基底改成82+白色/魔法級縮小38顯示並移除亮光減少光害，但純智、敏智系列還保有藍光
+#3.調整特殊武器、防具基底80物等以下縮小36顯示
+#3.新增長杖特殊武器基底包含烏鴉杖、鏡子杖..
+#4.調整部分最高素質防具籃底顯示，例如最強輕盾移除"遠古輕盾"改新增"沙漠輕盾"
+#5.調整特殊基底白色/魔法一直顯示只有長矛、單手法杖、法器、細杖、精魂衣服、特殊飾品與腰帶(歡迎給建議)
+#6.修正T1~T12難度沒有隱藏白裝錯誤
+
+# 版 本:KongRouV0.5.1.4 2026/06/11
+#1.調整81物等以上三洞雙手武器、防具 白裝、魔法裝備顯示，音效為"神聖石"級的設定錯誤
+
+# 版 本:KongRouV0.5.1.3 2026/06/10
+#1.調整隱藏高等地圖技能寶石限制與不再隱藏精魂寶石
+#2.調整隱藏80+地圖以上非特殊基底的稀有裝備2階以下裝，按ALT模式下可以顯示其他高物等稀有1~2階(藍綠色)
+#3.調整特殊基底腰帶顯示，白色特殊基底如"裂痕系列腰帶"不管裝等都會顯示
+
+# 版 本:KongRouV0.5.1.2 2026/06/10
+#1.新增機會石顯示物等55以上白色級實用腰帶 (機會石點魔血)
+#2.移除雙子弓和部分箭袋掉落音效
+#3.調整匠鍛符文 為神聖級顯示和音效
+#4.隱藏無附魔已汙染白色、魔法的裝備和武器
+#5.調整特殊基底的 單手法杖/長矛與細杖 白色魔法級將一直較小顯示
+#6.調整混沌石顏色紅框與其他通貨區分，音效升級成"有財寶"
+
 # 版 本:KongRouV0.5.1.1 2026/06/9
 #1.修正顯示匠鍛符文-升級插槽中的符文
 #2.調整1元金幣錯誤
@@ -255,7 +280,7 @@
 #橘金Brown 傳奇類(武器、裝備、飾品、鑰匙)
 #橘光Orange 高級特殊類(腐化、複製、附魔、勢力、破裂)
 #黃光Yellow 有價通貨類
-#綠光green 任務物品地錯誤未知物品
+#綠光green 任務物品地、錯誤未知物品
 #藍光blue 珠寶飾品、特殊基底裝
 #青色Cyan 特殊聯盟物品通貨(催化劑、精髓、預兆..)
 #紫光Purple 聯盟地圖、異界通貨碎片分類
@@ -263,13 +288,14 @@
 #白光White 地圖、品質藥劑、雜項
 #粉紅Pink 技能寶石、精魂寶石、輔助寶石
 
-###【掉落稀有裝分類表】
-#82級+底 白框橘底
-#高階級底 紅框黑底
+###【掉落裝備顏色分類表】
+#82級+底 黃框橘底
+#高階級底 紅框深黑底
 #特殊稀有 淺藍框深藍底
 #特殊魔法 淺藍框藍綠底
 #一般稀有 暗灰底
 #低階基底 灰色底
+#5.調整新基底衣服、腰帶、戒指顯示
 
 ##【掉落音效分類表】
 ##CustomAlertSound
@@ -281,18 +307,18 @@
 #  崇高               :0_Guru Lingbo.mp3       格了林巴~ 
 #  可能值錢裝備        :62_T2Currency.mp3        華麗音效
 
-#完美技能工匠石     :6_Have_treasure.mp3
-#高階技能工匠石    :61_T1Currency.mp3
-#低階技能工匠石    :62_T2Currency.mp3
+#完美技能/符文技能    :6_Have_treasure.mp3
+#高階技能/符文技能    :61_T1Currency.mp3
+#低階技能/符文技能    :62_T2Currency.mp3
 
 #熱門傳奇裝備     :4_WOW_Legend.mp3
 #經典傳奇裝備     :51_Class Unique_Affix.mp3 > 4_WOW_Legend.mp3
 
-#特殊通貨、聯盟物品由貴重依序到便宜
-#神聖石等級       :10_Wow_marvelous.mp3
-#崇高石等級       :9_marvelous.mp3
-#富豪石等級       :3_O-A.mp3
-#護甲片等級       :42_Stones.mp3
+#裝備、特殊通貨、聯盟物品由貴重依序到便宜
+#鏡 子等級(100D+)    :8_Mirror.mp3 > 7_Amazing_treasure.mp3
+#神聖石等級          :7_Amazing_treasure.mp3
+#混沌石等級(0.5~0.9D):6_Have_treasure.mp3  
+#崇高石等級          :5_treasures.mp3
 
 #稀有珠寶專用     :21_Gems.mp3
 #魔法珠寶專用     :22_Gems_B.mp3 > 21_Gems.mp3
@@ -472,8 +498,8 @@ SetBorderColor 255 0 0
 SetBackgroundColor 255 255 255 
 CustomAlertSound "6_Have_treasure.mp3" 280
 PlayEffect Red
-MinimapIcon 0 Red Star
-SetFontSize 50
+MinimapIcon 1 Red Star
+SetFontSize 46
 DisableDropSound True
 
 # A級高階技能工匠石(5L)
@@ -718,6 +744,7 @@ BaseType == "Greater Regal Orb"
 SetTextColor 255 207 132
 SetBorderColor 140 140 0
 SetBackgroundColor 76 51 12
+PlayEffect Yellow 
 SetFontSize 38
 DisableDropSound True
 
@@ -823,12 +850,12 @@ AreaLevel <= 79
 Class == "Stackable Currency"
 BaseType = "Chaos Orb" 
 SetTextColor 244 190 98
-SetBorderColor 244 190 98
-SetBackgroundColor 76 51 12
-CustomAlertSound "5_treasures.mp3" 200
+SetBorderColor 255 40 18
+SetBackgroundColor 20 20 20
+CustomAlertSound "6_Have_treasure.mp3" 250
 PlayEffect Yellow 
-MinimapIcon 1 Yellow Circle
-SetFontSize 46
+MinimapIcon 0 Yellow Circle
+SetFontSize 50
 DisableDropSound True
 
 Show
@@ -836,12 +863,12 @@ AreaLevel >= 80
 Class == "Stackable Currency"
 BaseType == "Chaos Orb" 
 SetTextColor 244 190 98
-SetBorderColor 244 190 98
-SetBackgroundColor 76 51 12
-CustomAlertSound "5_treasures.mp3"140
+SetBorderColor 255 40 18
+SetBackgroundColor 20 20 20
+CustomAlertSound "6_Have_treasure.mp3" 220
 PlayEffect Yellow 
-MinimapIcon 2 Yellow Circle
-SetFontSize 44
+MinimapIcon 1 Yellow Circle
+SetFontSize 48
 DisableDropSound True
 
 #A2級通貨 崇高石
@@ -854,7 +881,7 @@ SetTextColor 255 255 255
 SetBorderColor 180 180 180
 SetBackgroundColor 240 100 35
 PlayAlertSound 2 300
-CustomAlertSound "0_Guru Lingbo.mp3" 160
+CustomAlertSound "0_Guru Lingbo.mp3" 150
 PlayEffect Yellow 
 MinimapIcon 1 Yellow Circle
 SetFontSize 44
@@ -868,7 +895,7 @@ BaseType == "Exalted Orb"
 SetTextColor 255 255 255 
 SetBorderColor 180 180 180
 SetBackgroundColor 240 100 35
-CustomAlertSound "0_Guru Lingbo.mp3" 120 
+CustomAlertSound "0_Guru Lingbo.mp3" 100 
 MinimapIcon 2 Yellow Circle
 PlayEffect Yellow 
 SetFontSize 42
@@ -1407,13 +1434,13 @@ DisableDropSound True
 Show
 Class "Augment"
 BaseType "Masterwork Rune"
-SetTextColor 255 220 120 255
-SetBorderColor 255 220 120 255
-SetBackgroundColor 84 34 34 255 
-CustomAlertSound "6_Have_treasure.mp3" 220
-PlayEffect Yellow 
-MinimapIcon 1 Yellow Circle
-SetFontSize 45
+SetTextColor 255 0 0 
+SetBorderColor 255 0 0 
+SetBackgroundColor 255 255 255 
+CustomAlertSound "7_Amazing_treasure.mp3" 200 
+PlayEffect Red
+MinimapIcon 1 Red Star
+SetFontSize 48
 DisableDropSound True
 
 ##探險助熔劑"Masterwork Rune"
@@ -2280,10 +2307,10 @@ SetFontSize 44
 DisableDropSound True
 
 #0.5版"遠古濃縮"、"遠古" "濃縮"液態情感(高級珠寶加工)
-#A級:遠古濃縮孤立、遠古濃縮苦難、遠古濃縮恐懼、遠古偏執、遠古厭惡、遠古忌妒
+#A級:遠古濃縮孤立、遠古濃縮苦難、遠古濃縮恐懼
 Show
 Class = "Stackable Currency"
-BaseType "Ancient Concentrated Liquid Isolation" "Ancient Concentrated Liquid Suffering" "Ancient Concentrated Liquid Fear" "Ancient Liquid Paranoia" "Ancient Liquid Disgust"  "Ancient Liquid Envy" 
+BaseType "Ancient Concentrated Liquid Isolation" "Ancient Concentrated Liquid Suffering" "Ancient Concentrated Liquid Fear" 
 SetTextColor 204 102 0
 SetBorderColor 204 102 0
 SetBackgroundColor 255 255 255
@@ -2293,17 +2320,16 @@ MinimapIcon 1 Red Star
 SetFontSize 45
 DisableDropSound True
 
-#B級:遠古絕望
+#B級:遠古偏執、遠古厭惡、遠古忌妒
 Show
 Class = "Stackable Currency"
-BaseType "Ancient Liquid Despair" 
+BaseType "Ancient Liquid Paranoia" "Ancient Liquid Disgust"  "Ancient Liquid Envy" 
 SetTextColor 120 255 240
 SetBorderColor 120 255 240
 SetBackgroundColor 0 0 0
 CustomAlertSound "5_treasures.mp3" 250
-PlayEffect Red
-MinimapIcon 1 Red Star
-SetFontSize 42
+PlayEffect Cyan
+SetFontSize 45
 DisableDropSound True
 
 #其他"遠古濃縮"、"遠古"液態情感 
@@ -2314,39 +2340,26 @@ SetTextColor 120 255 240
 SetBorderColor 120 255 240
 SetBackgroundColor 0 0 0
 CustomAlertSound "5_treasures.mp3" 250
-PlayEffect Red
-MinimapIcon 2 Red Star
-SetFontSize 42
+PlayEffect Cyan
+MinimapIcon 2 Cyan Circle
+SetFontSize 45
 DisableDropSound True
 
 #0.5版"遠古稀釋"液態情感(中級珠寶加工)
-#A級:遠古稀釋貪婪
+#B級:遠古稀釋貪婪、遠古稀釋罪惡、遠古稀釋憤怒
 Show
 Class = "Stackable Currency"
-BaseType "Ancient Diluted Liquid Greed"
-SetTextColor 204 102 0
-SetBorderColor 204 102 0
-SetBackgroundColor 255 255 255
-CustomAlertSound "6_Have_treasure.mp3" 200
-PlayEffect Red
-MinimapIcon 1 Red Star
-SetFontSize 44
-DisableDropSound True
-
-#B級:遠古稀釋罪惡、遠古稀釋憤怒
-Show
-Class = "Stackable Currency"
-BaseType "Ancient Diluted Liquid Guilt" "Ancient Diluted Liquid Ire"
+BaseType "Ancient Diluted Liquid Greed" "Ancient Diluted Liquid Guilt" "Ancient Diluted Liquid Ire"
 SetTextColor 120 255 240
 SetBorderColor 120 255 240
 SetBackgroundColor 0 0 0
 CustomAlertSound "5_treasures.mp3" 250
-PlayEffect Red
-MinimapIcon 2 Red Star
-SetFontSize 42
+PlayEffect Cyan
+MinimapIcon 2 Cyan Circle
+SetFontSize 45
 DisableDropSound True
 
-#其他"遠古稀釋"、液態情感 
+#其他"遠古稀釋"液態情感 
 Show
 Class = "Stackable Currency"
 BaseType "Ancient Diluted Liquid" 
@@ -2354,9 +2367,9 @@ SetTextColor 120 255 240
 SetBorderColor 120 255 240
 SetBackgroundColor 0 0 0
 CustomAlertSound "5_treasures.mp3" 250
-PlayEffect Red
-MinimapIcon 2 Red Star
-SetFontSize 42
+PlayEffect Cyan
+MinimapIcon 2 Cyan Circle
+SetFontSize 45
 DisableDropSound True
 
 #0.5版"遠古"液態情感(時迭珠寶加工)
@@ -2375,10 +2388,10 @@ SetFontSize 50
 DisableDropSound True
 
 #A級遠古液態情感 
-#絕望、厭惡、忌妒、偏執
+#厭惡、忌妒、偏執
 Show
 Class = "Stackable Currency"
-BaseType "Ancient Liquid Despair" "Ancient Liquid Disgust" "Ancient Liquid Envy" "Ancient Liquid Parano"
+BaseType "Ancient Liquid Disgust" "Ancient Liquid Envy" "Ancient Liquid Parano"
 SetTextColor 204 102 0
 SetBorderColor 204 102 0
 SetBackgroundColor 255 255 255
@@ -2847,7 +2860,6 @@ PlayEffect Pink
 #生命藥劑物等82以上
 Show
 ItemLevel >= 82
-Rarity <= Magic
 Class "Life Flasks"
 BaseType "Ultimate Life Flask"
 SetBorderColor 255 130 110
@@ -2861,7 +2873,6 @@ DisableDropSound True
 #魔力藥劑物等82以上
 Show
 ItemLevel >= 82
-Rarity <= Magic
 Class "Mana Flasks"
 BaseType "Ultimate Mana Flask"
 SetBorderColor 150 170 255
@@ -3560,32 +3571,47 @@ MinimapIcon 2 Orange Moon
 SetFontSize 42
 PlayEffect Orange
 
-#腐化飾品
+##有附魔汙染稀有飾品
 Show
+AnyEnchantment True
 Corrupted True
-ItemLevel >= 80
-Rarity <= Rare
+Rarity = Rare
 Class "Amulets" "Rings" "Belts"
 SetTextColor 172 46 2 
 SetBorderColor 117 0 8  
 SetBackgroundColor 25 14 0  
-MinimapIcon 1 Orange Moon
-SetFontSize 45
+MinimapIcon 1 Orange Raindrop
+SetFontSize 42
+PlayEffect Orange
+
+#腐化稀有飾品
+Show
+AnyEnchantment False
+Corrupted True
+ItemLevel >= 80
+Rarity = Rare
+Class "Amulets" "Rings" "Belts"
+SetTextColor 172 46 2 
+SetBorderColor 117 0 8  
+SetBackgroundColor 25 14 0  
+MinimapIcon 2 Orange Moon
+SetFontSize 44
 PlayEffect Orange
  
 Show
+AnyEnchantment False
 Corrupted True
-Rarity <= Rare
+Rarity = Rare
 Class "Amulets" "Rings" "Belts"
 SetTextColor 172 46 2 
 SetBorderColor 117 0 8  
 SetBackgroundColor 24 220 220 
-MinimapIcon 2 Orange Moon
-SetFontSize 44
+SetFontSize 42
 PlayEffect Orange
 
-##腐化稀有裝備
+##有附魔汙染稀有裝備-水滴
 Show 
+AnyEnchantment True
 Corrupted True
 Rarity Rare 
 Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Bucklers" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Quivers" "Rings" "Sceptres" "Shields" "Spears" "Staves" "Two Hand Maces" "Wands" "Talismans" 
@@ -3593,8 +3619,55 @@ AreaLevel >= 65
 SetTextColor 172 46 2 
 SetBorderColor 255 20 60 255
 SetBackgroundColor 25 14 0 
-SetFontSize 42
+MinimapIcon 2 Orange Raindrop
+SetFontSize 41
 PlayEffect Orange
+
+##無附魔汙染稀有裝備-月亮
+Show 
+AnyEnchantment False
+Corrupted True
+Rarity Rare
+Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Bucklers" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Quivers" "Rings" "Sceptres" "Shields" "Spears" "Staves" "Two Hand Maces" "Wands" "Talismans" 
+SetTextColor 172 46 2 
+SetBorderColor 117 0 8  
+SetBackgroundColor 25 14 0 
+MinimapIcon 2 Orange Moon
+SetFontSize 40
+	
+##無附魔汙染稀有武器-月亮
+Show
+AnyEnchantment False
+Corrupted True
+Rarity Rare
+Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
+SetTextColor 172 46 2 
+SetBorderColor 117 0 8  
+SetBackgroundColor 25 14 0 
+MinimapIcon 2 Orange Moon
+SetFontSize 40
+
+##[隱藏]無附魔汙染白色魔法裝備-
+Show 
+AnyEnchantment False
+Corrupted True
+Rarity <= Magic
+Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Bucklers" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Quivers" "Rings" "Sceptres" "Shields" "Spears" "Staves" "Two Hand Maces" "Wands" "Talismans" 
+SetTextColor 172 46 2 
+SetBorderColor 117 0 8  
+SetBackgroundColor 25 14 0 
+SetFontSize 34
+
+##[隱藏]無附魔汙染白色魔法武器
+Show
+AnyEnchantment False
+Corrupted True
+Rarity <= Magic
+Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
+SetTextColor 172 46 2 
+SetBorderColor 117 0 8  
+SetBackgroundColor 25 14 0 
+SetFontSize 34
 
 ##腐化藥劑
 Show
@@ -3629,26 +3702,6 @@ MinimapIcon 1 Orange Cross
 SetFontSize 47
 PlayEffect Orange
 
-##無附魔汙染裝備-水滴形
-Show 
-AnyEnchantment False
-Corrupted True
-Rarity Rare
-Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Bucklers" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Quivers" "Rings" "Sceptres" "Shields" "Spears" "Staves" "Two Hand Maces" "Wands" "Talismans" 
-AreaLevel >= 65
-SetTextColor 172 46 2 
-SetBorderColor 117 0 8  
-SetBackgroundColor 25 14 0 
-SetFontSize 42
-	
-#腐化裝備
-Show
-Corrupted True
-Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
-SetTextColor 172 46 2 
-SetBorderColor 117 0 8  
-SetBackgroundColor 25 14 0 
-SetFontSize 40
 #--------------------------
 #【8F勢力、附魔、破裂物品】HasInfluence、AnyEnchantment、FracturedItem
 #--------------------------
@@ -3737,7 +3790,7 @@ SetBackgroundColor 70 10 10
 MinimapIcon 1 Orange Raindrop
 SetFontSize 43
 
-#附魔飾品腰帶80物等以下
+#附魔飾品腰帶80物等以上
 AnyEnchantment True
 Show
 Rarity <= Rare
@@ -3845,7 +3898,6 @@ SetBackgroundColor 70 10 10
 MinimapIcon 0 Orange Cross
 SetFontSize 45
 
-#--------------------------
 #--------------------------
 # 【9F傳奇】 Unique
 #--------------------------
@@ -4160,7 +4212,6 @@ SetBorderColor 175 96 37
 SetBackgroundColor 53 13 13 
 DisableDropSound True
 
-
 #------------------------------------
 #   [9F-6] 版本傳奇  uniques Multi-Unique bases.
 #------------------------------------
@@ -4253,6 +4304,7 @@ SetBackgroundColor 255 0 255 255
 CustomAlertSound "4_WOW_Legend.mp3" 250
 PlayEffect Pink
 MinimapIcon 1 Pink Pentagon
+
 #------------------------------------
 #   [9F-9]機會石點傳奇區 
 #------------------------------------
@@ -4435,15 +4487,15 @@ MinimapIcon 1 Red Diamond
 SetFontSize 47
 DisableDropSound True
 
-#顯示物等50以上白色級實用腰帶 雙層腰帶 長腰帶  "Double Belt" "Long Belt" 
-Show 
+#顯示物等50以上白色級 雙層腰帶 長腰帶 
+Hide
 Corrupted False
 Mirrored False
 Class "Belts"
 AreaLevel <= 74
 ItemLevel >= 50
 Rarity Normal
-BaseType = "Utility Belt"
+BaseType = "Double Belt" "Long Belt" 
 SetBorderColor 255 255 153
 SetBackgroundColor 10 10 70 
 PlayEffect White
@@ -4452,14 +4504,14 @@ CustomAlertSound "6_Have_treasure.mp3" 250
 SetFontSize 50
 DisableDropSound True
 
-Show 
+Hide
 Corrupted False
 Mirrored False
 Class "Belts"
 AreaLevel <= 78
 ItemLevel >= 50
 Rarity Normal
-BaseType = "Utility Belt"
+BaseType = "Double Belt" "Long Belt" 
 SetBorderColor 255 255 153
 SetBackgroundColor 10 10 70 
 PlayEffect White
@@ -4467,19 +4519,35 @@ MinimapIcon 1 White Diamond
 SetFontSize 45
 DisableDropSound True
 
-Show 
+Hide
 Corrupted False
 Mirrored False
 Class "Belts"
 AreaLevel >= 79
 ItemLevel >= 50
 Rarity Normal
-BaseType = "Utility Belt"
+BaseType = "Double Belt" "Long Belt" 
 SetBorderColor 255 255 153
 SetBackgroundColor 10 10 70 
 PlayEffect White
 MinimapIcon 1 White Diamond
 SetFontSize 42
+DisableDropSound True
+
+#顯示物等55以上白色級實用腰帶 (機會石點魔血)
+Show 
+Corrupted False
+Mirrored False
+Class "Belts"
+ItemLevel >= 55
+Rarity Normal
+BaseType = "Utility Belt" 
+SetBorderColor 255 255 153
+SetBackgroundColor 10 10 70 
+PlayEffect White
+MinimapIcon 1 White Diamond
+CustomAlertSound "6_Have_treasure.mp3" 250
+SetFontSize 50
 DisableDropSound True
 
 #顯示物等31以上白色"華麗腰帶" (機會石點瑞斯拉薩之纏用)
@@ -5515,7 +5583,7 @@ DisableDropSound True
 
 #低物等一般護符
 Show 
-ItemLevel <= 78
+ItemLevel <= 79
 Class "Charms"
 BaseType "Charm"
 Rarity <= Rare
@@ -5528,7 +5596,7 @@ DisableDropSound True
 
 #高物等一般護符
 Show 
-ItemLevel >= 79
+ItemLevel >= 80
 Class "Charms"
 BaseType "Charm"
 Rarity = Rare
@@ -5546,7 +5614,6 @@ DisableDropSound True
 #   [11F-1]顯示 未鑑定卓越有高洞數
 #------------------------------------
 ##未鑑定"卓越"+有高洞數
-
 #82+卓越三洞雙手武器、盔甲 裝備顯示+音效"鏡子"級~大聲的喇叭
 Show
 Quality >= 21
@@ -5559,13 +5626,13 @@ SetBackgroundColor 255 255 255
 CustomAlertSound "7_Amazing_treasure.mp3" 260
 PlayEffect Red
 SetFontSize 50
-MinimapIcon 0 Red Circle
+MinimapIcon 1 Red Circle
 
-#79+卓越三洞雙手武器、盔甲 白裝、魔法、稀有裝備顯示音效為"神聖石"級
+#80+卓越三洞雙手武器、盔甲 白裝、魔法、稀有裝備顯示音效為"神聖石"級
 Show
 Quality >= 21
 Sockets >= 3
-ItemLevel >= 79
+ItemLevel >= 80
 Rarity <= Rare
 Class == "Talismans" "Bows" "Crossbows" "Quarterstaves" "staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Body Armours" 
 SetTextColor 255 0 0 
@@ -5576,11 +5643,11 @@ PlayEffect Red
 SetFontSize 47
 MinimapIcon 0 Red Circle
 
-#79+卓越二洞單手武器、防具白裝、魔法、稀有裝備顯示音效為"神聖石"級
+#80+卓越二洞單手武器、防具白裝、魔法、稀有裝備顯示音效為"神聖石"級
 Show
 Quality >= 21
 Sockets >= 2
-ItemLevel >= 79
+ItemLevel >= 80
 Class == "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Helmets"
 Rarity <= Rare
 SetTextColor 255 0 0 
@@ -5595,12 +5662,12 @@ MinimapIcon 0 Red Circle
 #   [11F-3]顯示 未鑑定有高洞數
 #------------------------------------
 
-#82物等以上三洞雙手武器、防具 白裝、魔法裝備顯示，音效為"神聖石"級
+#81物等以上三洞雙手武器、防具 白裝、魔法裝備顯示，音效為"神聖石"級
 Show
 Corrupted False
 Mirrored False
 Sockets >= 3
-ItemLevel >= 82
+ItemLevel >= 81
 Rarity <= Magic
 Class == "Talismans" "Bows" "Crossbows" "Quarterstaves" "staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Body Armours" 
 SetTextColor 255 0 0
@@ -5612,7 +5679,7 @@ PlayEffect Red
 SetFontSize 50
 MinimapIcon 0 Red Circle
 
-#79物等以上三洞雙手武器、防具 白裝、魔法裝備顯示，音效為無效石級有財寶~ 
+#80物等以上三洞雙手武器、防具 白裝、魔法裝備顯示，音效為無效石級有財寶~ 
 Show
 Corrupted False
 Mirrored False
@@ -5628,12 +5695,12 @@ PlayEffect Red
 SetFontSize 50
 MinimapIcon 1 Red Circle
 
-#79物等以上二洞單手武器、防具 白裝、魔法、稀有裝備顯示，音效為無效石級有財寶~ 
+#80物等以上二洞單手武器、防具 白裝、魔法、稀有裝備顯示，音效為無效石級有財寶~ 
 Show
 Corrupted False
 Mirrored False
 Sockets >= 2
-ItemLevel >= 79
+ItemLevel >= 80
 Class == "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Helmets"
 SetTextColor 255 0 0
 SetBorderColor 204 102 0
@@ -5670,7 +5737,6 @@ CustomAlertSound "6_Have_treasure.mp3" 200
 SetFontSize 47
 PlayEffect Orange
 MinimapIcon 1 Orange Circle	
-
 
 #------------------------------------
 #   [11F-4]顯示 未鑑定卓越裝備
@@ -5872,7 +5938,6 @@ Show
 	DisableDropSound True
 
 Show 
-    AreaLevel <= 81
     UnidentifiedItemTier = 4
 	Rarity Magic
 	BaseType == "Adherent Cuffs" "Aegis Quarterstaff" "Akoyan Spear" "Ancestral Tiara" "Blacksteel Crest Shield" "Blacksteel Gauntlets" "Blacksteel Sabatons" "Chiming Staff" "Conjurer Mantle" "Corsair Coat" "Cryptic Crown" "Cryptic Leggings" "Daggerfoot Shoes" "Dastard Armour" "Death Mail" "Desert Buckler" "Desolate Crossbow" "Drakeskin Boots" "Dueling Wand" "Falconer's Jacket" "Fanatic Greathammer" "Flying Spear" "Freebooter Cap" "Galvanic Wand" "Gemini Bow" "Gladiatorial Helm" "Golden Targe" "Grinning Mask" "Imperial Greathelm" "Marauding Mace" "Massive Greathammer" "Massive Mitts" "Omen Sceptre" "Paralysing Staff" "Polished Bracers" "Primed Quiver" "Razor Quarterstaff" "Secured Wraps" "Sekhema Sandals" "Siege Crossbow" "Sirenscale Gloves" "Sleek Jacket" "Slipstrike Vest" "Soldier Cuirass" "Tasalian Focus" "Tasalian Greaves" "Tawhoan Tower Shield" "Vile Robe" "Warlord Cuirass" "Withered Wand" "Wrath Sceptre"
@@ -5895,8 +5960,7 @@ Show
 	DisableDropSound True
 	
 Show 
-    AreaLevel <= 81
-	UnidentifiedItemTier = 4
+    UnidentifiedItemTier = 4
 	Rarity Magic
 	BaseType == "Acrid Wand" "Akoyan Club" "Ancient Buckler" "Ancient Cuffs" "Apostle Leggings" "Attuned Wand" "Austere Garb" "Barbed Bracers" "Baroque Targe" "Cavalry Boots" "Champion Helm" "Charmed Shoes" "Cinched Boots" "Commander Gauntlets" "Cryptic Helm" "Cultist Gauntlets" "Death Mantle" "Desert Cap" "Divine Crown" "Dragonscale Boots" "Elegant Crossbow" "Elegant Wraps" "Fanatic Bow" "Faridun Mask" "Feathered Raiment" "Flexed Crossbow" "Flowing Raiment" "Fortified Hammer" "Fortress Sabatons" "Fortress Tower Shield" "Gemini Crossbow" "Gleaming Cuffs" "Grand Bracers" "Grand Spear" "Guardian Bow" "Kamasan Tiara" "Leyline Focus" "Lunar Quarterstaff" "Luxurious Slippers" "Masked Greathelm" "Noble Sabatons" "Obliterator Bow" "Opulent Gloves" "Orichalcum Spear" "Ornate Greaves" "Ornate Mitts" "Ornate Plate" "Paragon Greathelm" "Penetrating Quiver" "Pronged Spear" "Quickslip Shoes" "Rambler Jacket" "Rattling Sceptre" "Reaping Staff" "Roaring Staff" "Ruination Maul" "Sacramental Robe" "Sacred Focus" "Saintly Crown" "Sanctified Staff" "Sandsworn Sandals" "Seaglass Spear" "Siphoning Wand" "Soaring Mask" "Soaring Targe" "Sorcerous Tiara" "Spiked Spear" "Stalking Bracers" "Stalking Spear" "Stoic Sceptre" "Strife Pick" "Striking Quarterstaff" "Swiftstalker Coat" "Tawhoan Greatclub" "Thane Mail" "Trapper Hood" "Utzaal Cuirass" "Vaal Crest Shield" "Vaal Gloves" "Vaal Greaves" "Vaal Mitts" "Vaal Tower Shield" "Vaal Wraps" "Visceral Quiver" "Volant Quiver" "Voltaic Staff" "Warlock Leggings" "Warmonger Bow" "Wolfskin Mantle" "Woven Cap" "Wyrmscale Coat"
 	SetFontSize 40
@@ -5919,8 +5983,7 @@ Show
 	DisableDropSound True
 
 Show 
-    AreaLevel <= 81
-	UnidentifiedItemTier = 4
+    UnidentifiedItemTier = 4
 	Rarity Magic
 	BaseType == "Seastorm Mantle" "Shrouded Mail" "Adorned Wraps" "Anvil Maul" "Ashen Staff" "Avian Mask" "Bastion Sabatons" "Bolting Quarterstaff" "Bone Wand" "Bound Cuffs" "Bound Sandals" "Brigand Mask" "Bulwark Greaves" "Cannonade Crossbow" "Carved Greaves" "Cavalry Bow" "Ceremonial Robe" "Crown Mace" "Deerstalker Hood" "Dreaming Quarterstaff" "Druidic Crown" "Druidic Focus" "Dunerunner Sandals" "Engraved Crossbow" "Faithful Leggings" "Feathered Mitts" "Flanged Mace" "Gelid Staff" "Cassis Helm" "Gold Gloves" "Golden Mail" "Goldworked Tower Shield" "Grim Gloves" "Guardian Quarterstaff" "Gutspike Buckler" "Hallowed Focus" "Hawker's Jacket" "Heartcarver Mantle" "Helix Spear" "Inquisitor Crown" "Intricate Crest Shield" "Ironwood Greathammer" "Ironwood Shortbow" "Jungle Tiara" "Knightly Mitts" "Lizardscale Coat" "Mammoth Targe" "Massive Spear" "Molten Hammer" "Noble Greathelm" "Ornate Buckler" "Ornate Cuffs" "Pyrophyte Staff" "Royal Tower Shield" "Sacred Maul" "Sekheman Crest Shield" "Serpentscale Boots" "Shamanistic Leggings" "Shrine Sceptre" "Sinister Quarterstaff" "Skycrown Tiara" "Spiked Bracers" "Steelmail Gauntlets" "Stone Cuirass" "Stout Crossbow" "Toxic Quiver" "Trailblazer Armour" "Treerunner Shoes" "Twin Bow" "Two-Point Quiver" "Veteran Sabatons" "Volatile Wand" "Wanderer Shoes" "War Wraps" "Warded Helm" "Warmonger Greathelm" "Zealot Gauntlets"
 	SetFontSize 40
@@ -6183,7 +6246,7 @@ DisableDropSound True
 # 普通魔法 81+
 Show
 Class "Ring"
-Rarity = Rare
+Rarity <= Magic
 BaseType "Abyssal Signet"
 ItemLevel >= 81
 SetBorderColor 153 204 255
@@ -6567,9 +6630,7 @@ MinimapIcon 1 Red Diamond
 SetFontSize 50
 DisableDropSound True
 
-##
 ###[一般飾品特殊基底]
-##
 # 日耀項鍊(精魂)、月神項鍊(最大能量護盾)、珠光項鍊(元素抗性)、帝金護身符(稀有度)
 #拓荒時白色魔法放大高亮
 Show
@@ -6621,7 +6682,7 @@ Rarity = Rare
 BaseType = "Solar Amulet" "Lunar Amulet" "Pearlescent Amulet" "Gold Amulet"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-CustomAlertSound "4_WOW_Legend.mp3" 250
+CustomAlertSound "61_T1Currency.mp3" 200
 PlayEffect Blue
 MinimapIcon 1 Blue Diamond
 SetFontSize 50
@@ -6654,7 +6715,7 @@ Rarity = Rare
 BaseType = "Prismatic Ring" "Amethyst Ring" "Gold Ring" "Biostatic Ring" "Vitalic Ring" "Mnemonic Ring" 
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-CustomAlertSound "4_WOW_Legend.mp3" 200
+CustomAlertSound "61_T1Currency.mp3" 200
 PlayEffect Blue
 MinimapIcon 1 Blue Diamond
 SetFontSize 45
@@ -6680,7 +6741,7 @@ Rarity <= Magic
 BaseType = "Prismatic Ring" "Amethyst Ring" "Gold Ring" "Biostatic Ring" "Vitalic Ring" "Mnemonic Ring" 
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-CustomAlertSound "4_WOW_Legend.mp3" 300
+CustomAlertSound "61_T1Currency.mp3" 200
 PlayEffect Blue
 MinimapIcon 1 Blue Diamond
 SetFontSize 45
@@ -6695,7 +6756,7 @@ Rarity <= Magic
 BaseType = "Prismatic Ring" "Amethyst Ring" "Gold Ring" "Biostatic Ring" "Vitalic Ring" "Mnemonic Ring" 
 SetBorderColor 250 191 0
 SetBackgroundColor 10 10 70 
-CustomAlertSound "4_WOW_Legend.mp3" 300
+CustomAlertSound "61_T1Currency.mp3" 200
 PlayEffect Blue
 SetFontSize 45
 DisableDropSound True
@@ -6713,7 +6774,8 @@ SetBackgroundColor 10 10 70
 SetFontSize 42
 PlayEffect Blue
 
-#精良腰帶(藥劑充能)、鎖甲腰帶(減少使用藥劑充能)板甲腰帶(護甲值) / 0.5版新腰帶 追蹤、召喚、筋力、分岔
+#精良腰帶(藥劑充能)、鎖甲腰帶(減少使用藥劑充能)板甲腰帶(護甲值) "Fine Belt" "Mail Belt" "Plate Belt" 
+#0.5版新腰帶 獵跡腰帶、祈喚腰帶、韌筋腰帶、歧路腰帶
 #拓荒時白色魔法放大高亮
 Show 
 Corrupted False
@@ -6721,51 +6783,52 @@ Mirrored False
 AreaLevel <= 74
 Class "Belts"
 Rarity <= Magic
-BaseType = "Fine Belt" "Mail Belt" "Golden Obi" "Plate Belt" "Stalking Belt" "Invoking Belt" "Sinew Belt" "Forking Belt"
+BaseType = "Golden Obi" "Stalking Belt" "Invoking Belt" "Sinew Belt" "Forking Belt"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-PlayEffect White
-MinimapIcon 1 White Diamond
-SetFontSize 45
+PlayEffect Blue
+MinimapIcon 2 Blue Diamond
+SetFontSize 47
 
-#T15+地圖階段81物等+白色魔法顯示
+#T15+地圖階段80物等+白色魔法顯示
 Hide
 Corrupted False
 Mirrored False
-AreaLevel >= 79
-ItemLevel >= 81
+ItemLevel >= 80
 Class "Belts"
 Rarity <= Magic
-BaseType = "Fine Belt" "Mail Belt" "Golden Obi" "Plate Belt" "Stalking Belt" "Invoking Belt" "Sinew Belt" "Forking Belt"
+BaseType = "Golden Obi" "Stalking Belt" "Invoking Belt" "Sinew Belt" "Forking Belt"
 SetBorderColor 250 191 0
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-SetFontSize 45
+SetFontSize 47
+MinimapIcon 2 Blue Diamond
 DisableDropSound True
 
-#地圖階段白色魔法縮小並移除音效/圖標 
-Hide
+#地圖階段白色魔法縮小並移除音效
+Show 
 Corrupted False
 Mirrored False
 AreaLevel <= 79
 Class "Belts"
 Rarity <= Magic
-BaseType = "Fine Belt" "Mail Belt" "Golden Obi" "Plate Belt" "Stalking Belt" "Invoking Belt" "Sinew Belt" "Forking Belt"
+BaseType = "Golden Obi" "Stalking Belt" "Invoking Belt" "Sinew Belt" "Forking Belt"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-SetFontSize 40
-PlayEffect White
+PlayEffect Blue
+SetFontSize 45
+DisableDropSound True
 
 #稀有持續高亮顯示
 Show
 Class "Belts"
 Rarity = Rare
-BaseType = "Fine Belt" "Mail Belt" "Golden Obi" "Plate Belt" "Stalking Belt" "Invoking Belt" "Sinew Belt" "Forking Belt"
+BaseType = "Golden Obi" "Stalking Belt" "Invoking Belt" "Sinew Belt" "Forking Belt"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-MinimapIcon 1 Blue Diamond
-SetFontSize 45
+MinimapIcon 2 Blue Diamond
+SetFontSize 48
 
 #鍛鐵戒指(物理基礎傷害) 混沌戒指
 #拓荒時白色魔法放大高亮
@@ -6824,10 +6887,9 @@ ItemLevel <= 70
 BaseType == "Ancient Visor" "Ancient Leggings" "Ancient Gauntlets" "Ancient Mail"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-# CustomAlertSound "36_Heavy Armor.mp3" 180
 PlayEffect Blue
-MinimapIcon 1 Blue Diamond
-SetFontSize 42
+MinimapIcon 2 Blue Diamond
+SetFontSize 40
 
 #一般物等
 Show
@@ -6838,8 +6900,7 @@ BaseType == "Ancient Visor" "Ancient Leggings" "Ancient Gauntlets" "Ancient Mail
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
 PlayEffect Blue
-MinimapIcon 1 Blue Diamond
-SetFontSize 42
+SetFontSize 40
 
 #高物等
 Show
@@ -6849,10 +6910,9 @@ ItemLevel >= 81
 BaseType == "Ancient Visor" "Ancient Leggings" "Ancient Gauntlets" "Ancient Mail"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-# CustomAlertSound "36_Heavy Armor.mp3" 180
 PlayEffect Blue
-MinimapIcon 1 Blue Diamond
-SetFontSize 45
+MinimapIcon 2 Blue Diamond
+SetFontSize 42
 
 ##0.5版新盔甲
 #"Ornate Ringmail" "Grasping Mail" "Primal Markings"
@@ -6864,10 +6924,9 @@ ItemLevel <= 70
 BaseType == "Ornate Ringmail" "Grasping Mail" "Primal Markings"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-# CustomAlertSound "36_Heavy Armor.mp3" 180
 PlayEffect Blue
-MinimapIcon 1 Blue Diamond
-SetFontSize 42
+MinimapIcon 2 Blue Diamond
+SetFontSize 40
 
 #一般物等
 Show
@@ -6878,8 +6937,7 @@ BaseType == "Ornate Ringmail" "Grasping Mail" "Primal Markings"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
 PlayEffect Blue
-MinimapIcon 1 Blue Diamond
-SetFontSize 42
+SetFontSize 40
 
 #高物等
 Show
@@ -6889,10 +6947,9 @@ ItemLevel >= 81
 BaseType == "Ornate Ringmail" "Grasping Mail" "Primal Markings"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-# CustomAlertSound "36_Heavy Armor.mp3" 180
 PlayEffect Blue
-MinimapIcon 1 Blue Diamond
-SetFontSize 45
+MinimapIcon 2 Blue Diamond
+SetFontSize 42
 
 ##0.5版符鍛、符煉全系列
 #"Runeforged" "Runemastered" 
@@ -6917,8 +6974,7 @@ BaseType "Runeforged" "Runemastered"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
 PlayEffect Blue
-MinimapIcon 2 Blue Diamond
-SetFontSize 42
+SetFontSize 40
 
 #高物等
 Show
@@ -6929,8 +6985,8 @@ BaseType "Runeforged" "Runemastered"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
 PlayEffect Blue
-MinimapIcon 1 Blue Diamond
-SetFontSize 45
+MinimapIcon 2 Blue Diamond
+SetFontSize 42
 
 ###黃金套裝
 #黃金臂甲(最大生命) 黃金纏鞋(全部元素抗性) 黃金戰甲 (全部元素抗性) 黃金頭飾(全部元素抗性) 
@@ -6938,7 +6994,7 @@ SetFontSize 45
 Hide
 Corrupted False
 Mirrored False
-ItemLevel >= 81
+ItemLevel >= 82
 Rarity = Normal
 BaseType = "Golden Bracers" "Golden Caligae" "Golden Mantle" "Golden Visage" 
 SetBorderColor 153 204 255
@@ -6947,31 +7003,30 @@ SetFontSize 40
 
 #81等稀有級高亮
 Show
-ItemLevel >= 81
+ItemLevel >= 82
 Rarity = Rare
 BaseType = "Golden Bracers" "Golden Caligae" "Golden Mantle" "Golden Visage" 
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+MinimapIcon 2 Blue Cross
+SetFontSize 44
 
 #一般等級白色魔法
 Hide
+AreaLevel <= 78
 Corrupted False
 Mirrored False
-AreaLevel <= 79
-ItemLevel <= 78
 Rarity <= Magic
 BaseType = "Golden Bracers" "Golden Caligae" "Golden Mantle" "Golden Visage" 
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-SetFontSize 35
+SetFontSize 38
 
 ##[頭盔]
 ##純力量
 #帝國巨盔
-#顯示物等82以上白色"帝國巨盔" 
+#顯示物等81以上白色"帝國巨盔" 
 Hide
 Corrupted False
 Mirrored False
@@ -6981,8 +7036,7 @@ Rarity <= Magic
 BaseType == "Imperial Greathelm"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-SetFontSize 45
-PlayEffect White
+SetFontSize 40
 
 Show
 Class "Helmets"
@@ -6992,11 +7046,11 @@ SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
 MinimapIcon 1 Blue Cross
-SetFontSize 45
+SetFontSize 42
 
 ##純敏捷
 #劫掠者便帽
-#顯示物等82以上白色"劫掠者便帽" 
+#顯示物等81以上白色"劫掠者便帽" 
 Hide
 Corrupted False
 Mirrored False
@@ -7006,8 +7060,7 @@ Rarity <= Magic
 BaseType == "Freebooter Cap"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-SetFontSize 45
-PlayEffect White
+SetFontSize 40
 
 Show
 Class "Helmets"
@@ -7020,20 +7073,18 @@ MinimapIcon 1 Blue Cross
 SetFontSize 45
 
 ##純智慧
-#顯示物等82以上白色"先祖頭冠" 
+#顯示物等82以上白色"先祖頭冠"  "卡瑪薩頭冠" 
 Hide
 Corrupted False
 Mirrored False
 Class "Helmets"
 ItemLevel >= 82
 Rarity <= Magic
-BaseType = "Ancestral Tiara"
+BaseType = "Ancestral Tiara" "Kamasan Tiara" 
 SetBorderColor 255 255 255
 SetBackgroundColor 10 10 70 
-CustomAlertSound "6_Have_treasure.mp3" 200
-PlayEffect White
-MinimapIcon 1 White Diamond
-SetFontSize 50
+PlayEffect Blue
+SetFontSize 42
 DisableDropSound True
 
 Show
@@ -7043,33 +7094,7 @@ BaseType == "Ancestral Tiara"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
-
-#卡瑪薩頭冠
-#顯示物等82以上白色"卡瑪薩頭冠" 
-Hide
-Corrupted False
-Mirrored False
-Class "Helmets"
-ItemLevel >= 82
-Rarity <= Magic
-BaseType = "Kamasan Tiara" 
-SetBorderColor 255 255 255
-SetBackgroundColor 10 10 70 
-PlayEffect Blue
-MinimapIcon 1 White Diamond
-SetFontSize 50
-DisableDropSound True
-
-Show
-Class "Helmets"
-Rarity = Rare
-BaseType == "Kamasan Tiara" 
-SetBorderColor 153 204 255
-SetBackgroundColor 10 10 70 
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
+MinimapIcon 2 Blue Cross
 SetFontSize 45
 
 ##力敏
@@ -7084,8 +7109,7 @@ Rarity <= Magic
 BaseType == "Gladiatorial Helm"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-SetFontSize 42
-PlayEffect Blue
+SetFontSize 40
 
 Hide
 Class "Helmets"
@@ -7094,8 +7118,8 @@ BaseType == "Gladiatorial Helm"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+MinimapIcon 2 Blue Cross
+SetFontSize 42
 
 ##力智
 #隱祕之冠 魂骨之冠
@@ -7109,8 +7133,7 @@ Rarity <= Magic
 BaseType == "Cryptic Crown" "Spiritbone Crown"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-SetFontSize 42
-PlayEffect Blue
+SetFontSize 40
 
 Hide
 Class "Helmets"
@@ -7119,7 +7142,7 @@ BaseType == "Cryptic Crown" "Spiritbone Crown"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
+MinimapIcon 2 Blue Cross
 SetFontSize 45
 
 ##敏智
@@ -7134,18 +7157,18 @@ Rarity <= Magic
 BaseType == "Grinning Mask"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-SetFontSize 42
 PlayEffect Blue
+SetFontSize 40
 
-Show
+Hide
 Class "Helmets"
 Rarity = Rare
 BaseType == "Grinning Mask"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+MinimapIcon 2 Blue Cross
+SetFontSize 40
 
 #特殊頭
 #金黃花環 黃金面紗
@@ -7158,8 +7181,7 @@ Rarity <= Magic
 BaseType == "Golden Wreath" "Golden Visage"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-SetFontSize 42
-PlayEffect Blue
+SetFontSize 40
 
 Show
 Class "Helmets"
@@ -7168,8 +7190,8 @@ BaseType == "Golden Wreath" "Golden Visage"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+MinimapIcon 2 Blue Cross
+SetFontSize 42
 
 ##[手套]
 ##純力量
@@ -7184,18 +7206,16 @@ Rarity <= Magic
 BaseType == "Massive Mitts"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-SetFontSize 42
-PlayEffect White
+SetFontSize 40
 
-Show
+Hide
 Class "Gloves"
 Rarity = Rare
 BaseType == "Massive Mitts"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+SetFontSize 42
 
 ##純敏捷
 #亮澤護腕
@@ -7212,8 +7232,7 @@ SetBackgroundColor 10 10 70
 SetFontSize 42
 PlayEffect Blue
 
-Show
-AreaLevel <= 79
+Hide
 Class "Gloves"
 Rarity = Rare
 BaseType == "Polished Bracers"
@@ -7237,13 +7256,12 @@ SetBorderColor 255 255 255
 SetBackgroundColor 10 10 70 
 CustomAlertSound "6_Have_treasure.mp3" 200
 PlayEffect Blue
-MinimapIcon 1 White Diamond
-SetFontSize 50
+MinimapIcon 2 Blue Diamond
+SetFontSize 45
 DisableDropSound True
 
-Show
+Hide
 Class "Gloves"
-Rarity = Rare
 BaseType = "Sirenscale Gloves"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
@@ -7263,10 +7281,9 @@ Rarity <= Magic
 BaseType == "Blacksteel Gauntlets"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-SetFontSize 42
-PlayEffect Blue
+SetFontSize 40
 
-Show
+Hide
 Class "Gloves"
 Rarity = Rare
 BaseType == "Blacksteel Gauntlets"
@@ -7289,18 +7306,16 @@ BaseType == "Adherent Cuffs"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
 SetFontSize 42
-PlayEffect Blue
 
 Show
-AreaLevel <= 79
 Class "Gloves"
 Rarity = Rare
 BaseType == "Adherent Cuffs"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+MinimapIcon 2 Blue Cross
+SetFontSize 44
 
 ##敏智
 #牢固裹手
@@ -7314,7 +7329,7 @@ Rarity <= Magic
 BaseType == "Secured Wraps"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-SetFontSize 42
+SetFontSize 40
 PlayEffect Blue
 
 Show
@@ -7324,8 +7339,8 @@ BaseType == "Secured Wraps"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+MinimapIcon 2 Blue Cross
+SetFontSize 44
 
 #特殊手套
 #黃金臂甲
@@ -7381,7 +7396,7 @@ SetFontSize 45
 ##純敏
 #龍膚長靴
 #顯示物等82以上白色"龍膚長靴" 
-Hide
+Show
 Corrupted False
 Mirrored False
 Class "Boots"
@@ -7390,10 +7405,7 @@ Rarity <= Magic
 BaseType = "Drakeskin Boots"
 SetBorderColor 255 255 255
 SetBackgroundColor 10 10 70 
-CustomAlertSound "6_Have_treasure.mp3" 200
-PlayEffect White
-MinimapIcon 1 White Diamond
-SetFontSize 50
+SetFontSize 40
 DisableDropSound True
 
 Show
@@ -7407,15 +7419,15 @@ MinimapIcon 1 Blue Cross
 SetFontSize 45
 
 ##純智
-#絲克瑪便鞋
+#絲克瑪便鞋 沙誓便鞋
 #82+等級白色魔法
-Hide
+Show
 Corrupted False
 Mirrored False
 ItemLevel >= 82
 Class "Boots"
 Rarity <= Magic
-BaseType == "Sekhema Sandals"
+BaseType == "Sekhema Sandals" "Sandsworn Sandals"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
 SetFontSize 42
@@ -7425,31 +7437,6 @@ Show
 Class "Boots"
 Rarity = Rare
 BaseType == "Sekhema Sandals"
-SetBorderColor 153 204 255
-SetBackgroundColor 10 10 70 
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
-
-#沙誓便鞋
-#82+等級白色魔法
-Hide
-Corrupted False
-Mirrored False
-ItemLevel >= 82
-Class "Boots"
-Rarity <= Magic
-BaseType == "Sandsworn Sandals"
-SetBorderColor 153 204 255
-SetBackgroundColor 10 10 70
-SetFontSize 42
-PlayEffect Blue
-DisableDropSound True
-
-Show
-Class "Boots"
-Rarity = Rare
-BaseType == "Sandsworn Sandals"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
@@ -7468,8 +7455,7 @@ Rarity <= Magic
 BaseType == "Blacksteel Sabatons"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-SetFontSize 42
-PlayEffect Blue
+SetFontSize 40
 DisableDropSound True
 
 Show
@@ -7478,8 +7464,6 @@ Rarity = Rare
 BaseType == "Blacksteel Sabatons"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
 SetFontSize 45
 
 ##力智
@@ -7494,8 +7478,7 @@ Rarity <= Magic
 BaseType == "Cryptic Leggings"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70
-SetFontSize 42
-PlayEffect Blue
+SetFontSize 40
 DisableDropSound True
 
 Show
@@ -7504,9 +7487,7 @@ Rarity = Rare
 BaseType == "Cryptic Leggings"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+SetFontSize 42
 
 ##敏智
 #捷足輕鞋
@@ -7531,37 +7512,12 @@ BaseType == "Daggerfoot Shoes"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
-
-#特殊鞋
-#82+等級白色魔法
-Show
-Corrupted False
-Mirrored False
-ItemLevel >= 82
-Class "Boots"
-Rarity <= Magic
-BaseType == "Golden Caligae"
-SetBorderColor 153 204 255
-SetBackgroundColor 10 10 70
-SetFontSize 40
-PlayEffect Blue
-DisableDropSound True
-
-Show
-Class "Boots"
-Rarity = Rare
-BaseType == "Golden Caligae"
-SetBorderColor 153 204 255
-SetBackgroundColor 10 10 70 
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+MinimapIcon 2 Blue Cross
+SetFontSize 44
 
 ##[盔甲]
 #純力量
-#力量盔甲基底:深淵胸甲/華麗鎧甲(生命秒回)/士兵胸甲(高素質)/督軍胸甲(護甲值套用至元素傷害)/征服者鎧甲(暈眩門檻)
+#力量盔甲基底:深淵胸甲/華麗鎧甲(生命秒回)/士兵胸甲(高素質)/總督胸甲(護甲值套用至元素傷害)/征服者鎧甲(暈眩門檻)
 #82等白色魔法高亮
 Hide
 Corrupted False
@@ -7573,8 +7529,6 @@ BaseType "Abyssal Cuirass" "Ornate Plate" "Soldier Cuirass" "Warlord Cuirass" "C
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
 SetFontSize 40
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
 DisableDropSound True
 
 #82等稀有高亮+音效
@@ -7586,10 +7540,10 @@ BaseType "Abyssal Cuirass" "Ornate Plate" "Soldier Cuirass" "Warlord Cuirass" "C
 SetTextColor 250 191 0
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
-# CustomAlertSound "36_Heavy Armor.mp3" 200
-SetFontSize 50
+CustomAlertSound "36_Heavy Armor.mp3" 200
+SetFontSize 45
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
+MinimapIcon 2 Blue Cross
 DisableDropSound True
 
 Hide
@@ -7599,25 +7553,8 @@ BaseType "Abyssal Cuirass" "Ornate Plate" "Soldier Cuirass" "Warlord Cuirass" "C
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
-DisableDropSound True
-
-##純敏捷
-#顯示物等82以上白色"快速打擊背心(高素質)" 
-Hide
-Corrupted False
-Mirrored False
-Class "Body Armours"
-ItemLevel >= 82
-Rarity <= Magic
-BaseType = "Slipstrike Vest"
-SetBorderColor 255 255 255
-SetBackgroundColor 10 10 70 
-CustomAlertSound "6_Have_treasure.mp3" 200
-PlayEffect White
-MinimapIcon 1 White Diamond
-SetFontSize 50
+MinimapIcon 2 Blue Cross
+SetFontSize 44
 DisableDropSound True
 
 # 敏捷盔甲基底:海盜外套(減少移動速度懲罰)迅疾潛獵者外套(減少緩速) 快速打擊背心(高素質) 裝甲背心(元素異常狀態門檻) 鎖甲外套(減益效果緩速程度)
@@ -7632,8 +7569,6 @@ BaseType "Corsair Coat" "Swiftstalker Coat" "Slipstrike Vest" "Armoured Vest" "M
 SetBorderColor 250 255 255
 SetBackgroundColor 40 40 160
 SetFontSize 40
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
 DisableDropSound True
 
 #82等稀有高亮+音效
@@ -7645,28 +7580,26 @@ BaseType "Corsair Coat" "Swiftstalker Coat" "Slipstrike Vest" "Armoured Vest" "M
 SetTextColor 250 191 0
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
-# CustomAlertSound "35_Armor.mp3" 200
-SetFontSize 50
+CustomAlertSound "35_Armor.mp3" 200
+SetFontSize 45
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
+MinimapIcon 2 Blue Cross
 DisableDropSound True
 
 #一般等級稀有
-Show
+Hide
 Class "Body Armours" 
 Rarity = Rare
 BaseType "Corsair Coat" "Swiftstalker Coat" "Slipstrike Vest" "Armoured Vest" "Mail Coat"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+SetFontSize 42
 DisableDropSound True
 
 ##純智慧
 # 智慧盔甲基底:惡毒長袍(高素質) 聖禮長袍/奧術之衣(能量護盾充能)  羽絨之衣(生命傷害由魔力扣)  奧術之衣(護盾充能率) 啟蒙長袍(魔力回復率)
 #82等白色魔法高亮
-Hide
+Show
 Corrupted False
 Mirrored False
 ItemLevel >= 82
@@ -7677,7 +7610,6 @@ SetBorderColor 255 255 255
 SetBackgroundColor 40 40 160
 SetFontSize 40
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
 DisableDropSound True
 
 #82等稀有高亮+音效
@@ -7689,10 +7621,10 @@ BaseType "Feathered Raiment" "Vile Robe" "Feathered Raiment" "Arcane Raiment" "E
 SetTextColor 250 191 0
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
-# CustomAlertSound "35_Armor.mp3" 200
-SetFontSize 50
+CustomAlertSound "35_Armor.mp3" 200
+SetFontSize 45
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
+MinimapIcon 2 Blue Cross
 DisableDropSound True
 
 Class "Body Armours"
@@ -7701,14 +7633,14 @@ BaseType "Feathered Raiment" "Vile Robe" "Feathered Raiment" "Arcane Raiment" "E
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+MinimapIcon 2 Blue Cross
+SetFontSize 42
 DisableDropSound True
 
 #複合力量敏捷
 # 複合盔甲基底:領主鎖甲(減少被打暴擊傷害加成)競技鎖甲(火or冰or閃抗性) 惡徒護甲(60-80生命) 死亡鎖甲(最高素質) 英雄護甲(60-80生命)
 #82等白色魔法高亮
-Hide
+Show
 Corrupted False
 Mirrored False
 ItemLevel >= 82
@@ -7718,8 +7650,6 @@ BaseType "Thane Mail" "Tournament Mail" "Shrouded Mai" "Dastard Armour" "Death M
 SetBorderColor 255 255 255
 SetBackgroundColor 40 40 160
 SetFontSize 40
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
 DisableDropSound True
 
 #82等稀有高亮
@@ -7731,9 +7661,9 @@ BaseType "Thane Mail" "Shrouded Mai" "Dastard Armour" "Death Mail"
 SetTextColor 250 191 0
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
-SetFontSize 50
+SetFontSize 45
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
+MinimapIcon 2 Blue Cross
 DisableDropSound True
 
 Show
@@ -7742,16 +7672,13 @@ Rarity = Rare
 BaseType "Thane Mail" "Shrouded Mai" "Dastard Armour" "Death Mail"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "36_Heavy Armor.mp3" 200
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+SetFontSize 44
 DisableDropSound True
 
 #複合力量智慧
 # 複合盔甲基底:海洋風暴披肩(傷害補償為生命)召喚師披肩(+精魂) 死亡披肩(+1最大元素抗) 狼皮披肩(最高素質) 海風暴襯肩(傷害補償生命) 尊敬法衣(+1大抗) 烏鴉披肩(精魂)
 #82等白色魔法高亮
-Hide
+Show
 Corrupted False
 Mirrored False
 ItemLevel >= 82
@@ -7762,11 +7689,10 @@ SetBorderColor 255 255 255
 SetBackgroundColor 40 40 160
 SetFontSize 40
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
 DisableDropSound True
 
 #82等稀有高亮
-Hide
+Show
 ItemLevel >= 82
 Class "Body Armours" 
 Rarity = Rare
@@ -7774,21 +7700,35 @@ BaseType "Seastorm Mantle" "Conjurer Mantle" "Death Mantle" "Wolfskin Mantle" "S
 SetTextColor 250 191 0
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
-SetFontSize 50
+SetFontSize 45
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
+MinimapIcon 2Blue Cross
 DisableDropSound True
 
-Hide
+Show
 Class "Body Armours" 
 Rarity = Rare
 BaseType "Seastorm Mantle" "Conjurer Mantle" "Death Mantle" "Wolfskin Mantle" "Seastorm Mantle" "Revered Vestments" "Corvus Mantle"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "35_Armor.mp3" 200
+CustomAlertSound "35_Armor.mp3" 200
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+MinimapIcon 2 Blue Cross
+SetFontSize 42
+DisableDropSound True
+
+#召喚師披肩(+精魂) 烏鴉披肩(精魂)
+#白色魔法高亮
+Hide
+Corrupted False
+Mirrored False
+Class "Body Armours" 
+Rarity <= Magic
+BaseType "Conjurer Mantle" "Corvus Mantle"
+SetBorderColor 255 255 255
+SetBackgroundColor 40 40 160
+SetFontSize 40
+PlayEffect Blue
 DisableDropSound True
 
 #複合敏捷智慧
@@ -7805,7 +7745,7 @@ SetBorderColor 255 255 255
 SetBackgroundColor 40 40 160
 SetFontSize 40
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
+MinimapIcon 2 Blue Cross
 DisableDropSound True
 
 #82等稀有高亮
@@ -7817,9 +7757,9 @@ BaseType "Austere Garb" "Rambler Jacket" "Sleek Jacket" "Falconer's Jacket"
 SetTextColor 250 191 0
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
-SetFontSize 50
+SetFontSize 45
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
+MinimapIcon 2 Blue Cross
 DisableDropSound True
 
 Show
@@ -7828,10 +7768,10 @@ Rarity = Rare
 BaseType "Austere Garb" "Rambler Jacket" "Sleek Jacket" "Falconer's Jacket"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "35_Armor.mp3" 200
+CustomAlertSound "35_Armor.mp3" 200
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+MinimapIcon 2 Blue Cross
+SetFontSize 42
 DisableDropSound True
 
 #三種複合力量+敏捷+智慧
@@ -7846,10 +7786,10 @@ Rarity <= Magic
 BaseType "Sacrificial Regalia" "Grasping Mail" "Golden Mantle"
 SetBorderColor 255 255 255
 SetBackgroundColor 40 40 160
-SetFontSize 45
+SetFontSize 42
 CustomAlertSound "6_Have_treasure.mp3" 200
 PlayEffect Red
-MinimapIcon 1 Red Cross
+MinimapIcon 2 Red Cross
 DisableDropSound True
 
 #82等稀有高亮
@@ -7861,10 +7801,10 @@ BaseType "Sacrificial Regalia" "Grasping Mail" "Golden Mantle"
 SetTextColor 250 191 0
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
-SetFontSize 47
+SetFontSize 45
 CustomAlertSound "6_Have_treasure.mp3" 200
 PlayEffect Red
-MinimapIcon 1 Red Cross
+MinimapIcon 2 Red Cross
 DisableDropSound True
 
 Show
@@ -7873,41 +7813,37 @@ Rarity = Rare
 BaseType "Sacrificial Regalia" "Grasping Mail" "Golden Mantle"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "35_Armor.mp3" 200
+CustomAlertSound "35_Armor.mp3" 200
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+MinimapIcon 2 Blue Cross
+SetFontSize 44
 DisableDropSound True
 
 #--------------------------
 # 【14F特殊基底武器】Special base Weapon
 #--------------------------
 ###[單手法師武器基底]###
-
 ##單手杖
 #虹吸法杖(力抽) 電能法杖(電光領域) 刺鼻法杖(分解) 單挑法杖(拋法者coc) 扭曲魔杖、符文分叉、(0.5版) 
-#82等白色魔法高亮+音效
-Show
+#81等白色魔法高亮+音效
+Hide
 Corrupted False
 Mirrored False
-ItemLevel >= 82
+ItemLevel >= 81
 Class "Wands"
 Rarity <= Magic
-BaseType "Siphoning Wand" "Galvanic Wand" "Acrid Wand" "Dueling Wand" "Twisted Wand" "Runic Fork" "Twisted Wand" "Runic Fork"
+BaseType == "Siphoning Wand" "Galvanic Wand" "Acrid Wand" "Dueling Wand" "Twisted Wand" "Runic Fork" "Twisted Wand" "Runic Fork"
 SetBorderColor 255 255 255
 SetBackgroundColor 40 40 160
-# CustomAlertSound "34_staff.mp3" 200
 SetFontSize 40
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
 DisableDropSound True
 
-#80等稀有級高亮+音效
+#81等稀有級高亮+音效
 Show
-ItemLevel >= 80
+ItemLevel >= 81
 Class "Wands"
 Rarity = Rare
-BaseType "Siphoning Wand" "Galvanic Wand" "Acrid Wand" "Dueling Wand" "Twisted Wand" "Runic Fork"
+BaseType == "Siphoning Wand" "Galvanic Wand" "Acrid Wand" "Dueling Wand" "Twisted Wand" "Runic Fork" "Twisted Wand" "Runic Fork"
 SetTextColor 250 191 0
 SetBorderColor 250 191 0
 # CustomAlertSound "34_staff.mp3" 200
@@ -7917,59 +7853,69 @@ SetFontSize 50
 DisableDropSound True
 
 #一般等級稀有
-Show
+Hide
 Class "Wands"
 Rarity = Rare
-BaseType == "Siphoning Wand" "Galvanic Wand" "Acrid Wand" "Dueling Wand" "Twisted Wand" "Runic Fork"
+BaseType == "Siphoning Wand" "Galvanic Wand" "Acrid Wand" "Dueling Wand" "Twisted Wand" "Runic Fork" "Twisted Wand" "Runic Fork"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 # CustomAlertSound "34_staff.mp3" 200
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
+MinimapIcon 2 Blue Cross
 SetFontSize 40
+DisableDropSound True
+
+#普通白色魔法
+Hide
+AreaLevel <= 78
+Corrupted False
+Mirrored False
+Class "Wands"
+Rarity <= Magic
+BaseType == "Siphoning Wand" "Galvanic Wand" "Acrid Wand" "Dueling Wand" "Twisted Wand" "Runic Fork" "Twisted Wand" "Runic Fork"
+SetBorderColor 153 204 255
+SetBackgroundColor 10 10 70 
+SetFontSize 36
+DisableDropSound True
 
 ##單手權杖
-# 雜響權杖 "Rattling Sceptre"、敬神權杖(14骷髏戰士) "Pious Sceptre"、聖潔權杖(15骷髏戰士) "Hallowed Sceptre"、魔道權杖(紀律) "Stoic Sceptre"、握扣權杖(冰雪之心) "Clasped Sceptre"
-##徵兆權杖
+##雜響權杖、聖潔權杖(15骷髏戰士)、魔道權杖(紀律)、預兆權杖(暴率) 握扣權杖(冰雪之心)
 #81白色魔法高亮
-Show
+Hide
 Corrupted False
 Mirrored False
 ItemLevel >= 81
 Class "Sceptres"
 Rarity <= Magic
-BaseType "Omen Sceptre"
+BaseType "Rattling Sceptre" "Hallowed Sceptre" "Stoic Sceptre" "Omen Sceptre" "Clasped Sceptre"
 SetBorderColor 255 255 255
 SetBackgroundColor 40 40 160 
-# CustomAlertSound "34_staff.mp3" 200
-SetFontSize 40
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
+SetFontSize 38
 DisableDropSound True
 
-#82等稀有級高亮+音效
+#81等稀有級高亮+音效
 Show
-ItemLevel >= 82
+ItemLevel >= 81
 Class "Sceptres"
 Rarity = Rare
-BaseType "Omen Sceptre"
+BaseType "Rattling Sceptre" "Hallowed Sceptre" "Stoic Sceptre" "Omen Sceptre" "Clasped Sceptre"
 SetTextColor 250 191 0
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160 
-# CustomAlertSound "34_staff.mp3" 200
+CustomAlertSound "34_staff.mp3" 200
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 50
+MinimapIcon 2 Blue Cross
+SetFontSize 45
 DisableDropSound True
 
 #一般等級稀有
 Show
 Class "Sceptres"
 Rarity = Rare
-BaseType "Omen Sceptre"
+BaseType "Rattling Sceptre" "Hallowed Sceptre" "Stoic Sceptre" "Omen Sceptre" "Clasped Sceptre"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "34_staff.mp3" 200
+CustomAlertSound "34_staff.mp3" 200
 PlayEffect Blue
 MinimapIcon 1 Blue Cross
 SetFontSize 44
@@ -7977,23 +7923,21 @@ DisableDropSound True
 
 #一般等級魔法
 Hide
+AreaLevel <= 79
 Class "Sceptres"
 Rarity <= Magic
-BaseType "Rattling Sceptre" "Pious Sceptre" "Hallowed Sceptre" "Stoic Sceptre" "Omen Sceptre" "Clasped Sceptre"
+BaseType "Rattling Sceptre" "Hallowed Sceptre" "Stoic Sceptre" "Omen Sceptre" "Clasped Sceptre"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "34_staff.mp3" 200
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 40
+SetFontSize 36
 DisableDropSound True
 
 #其他高等權杖
-#80+白色魔法
+#81+白色魔法
 Hide
 Corrupted False
 Mirrored False
-ItemLevel >= 80
+ItemLevel >= 81
 Class "Sceptres"
 Rarity <= Magic
 SetBorderColor 255 255 255
@@ -8001,9 +7945,9 @@ SetBackgroundColor 40 40 160
 SetFontSize 40
 DisableDropSound True
 
-#80稀有
+#81稀有
 Show
-ItemLevel >= 80
+ItemLevel >= 81
 Class "Sceptres"
 Rarity = Rare
 SetBorderColor 153 204 255
@@ -8014,31 +7958,30 @@ SetFontSize 44
 DisableDropSound True
 
 ###[單手近戰武器基底]###
-
 ##單手劍
 ##黃金單手黃金之刃(全能力)
-#82等白色魔法高亮
+#81等白色魔法高亮
 Hide
-ItemLevel >= 82
+Corrupted False
+Mirrored False
+ItemLevel >= 81
 Class "One Hand Swords"
 Rarity <= Magic
 BaseType == "Golden Blade" 
 SetBorderColor 255 255 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "31_Weapon.mp3" 200
 SetFontSize 40
-MinimapIcon 1 Blue Cross
 DisableDropSound True
 
-#82等稀有級高亮
+#81等稀有級高亮
 Hide
-ItemLevel >= 82
+ItemLevel >= 81
 Rarity = Rare
 Class "One Hand Swords"
 BaseType == "Golden Blade"
 SetBorderColor 250 191 0
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "31_Weapon.mp3" 200
+CustomAlertSound "31_Weapon.mp3" 200
 PlayEffect Blue
 MinimapIcon 1 Blue Cross
 SetFontSize 50
@@ -8051,78 +7994,93 @@ Rarity = Rare
 BaseType == "Golden Blade" 
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "31_Weapon.mp3" 200
+CustomAlertSound "31_Weapon.mp3" 200
 PlayEffect Blue
 MinimapIcon 1 Blue Cross
 SetFontSize 40
 DisableDropSound True
 
-
 #單手長矛(矛)
-#海玻璃長矛(暴率10%)、突擊長矛(閃電傷)、艾古亞長矛(最高素質)、宏偉長矛(最大物傷) 尖刺長矛(暴擊率: 6.5%) 翱翔長矛(投擲爆炸) 羽翅長矛(攻速1.7)
+#海玻璃長矛(暴率10%)、突擊長矛(閃電傷)、宏偉長矛(最大物傷) 尖刺長矛(暴擊率: 6.5%) 翱翔長矛(投擲爆炸) 羽翅長矛(攻速1.7)
+#"Seaglass Spear" "Striking Spear" "Grand Spear" "Spiked Spear" "Soaring Spear" "Winged Spear"
+#艾古亞長矛(最高素質)
 #81等白色魔法高亮
-Hide
+Show
+Corrupted False
+Mirrored False
 ItemLevel >= 81
 Class "Spears"
 Rarity <= Magic
-BaseType == "Seaglass Spear" "Striking Spear" "Akoyan Spear" "Grand Spear" "Spiked Spear" "Soaring Spear" "Winged Spear"
+BaseType == "Akoyan Spear"
 SetBorderColor 255 255 255
 SetBackgroundColor 40 40 160
-# CustomAlertSound "33_Hammer.mp3" 150
-SetFontSize 42
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
+SetFontSize 40
 DisableDropSound True
 
-#82等稀有級高亮
+#81等稀有級高亮
 Show
-ItemLevel >= 82
+ItemLevel >= 81
 Class "Spears"
 Rarity = Rare
-BaseType == "Seaglass Spear" "Striking Spear" "Akoyan Spear" "Grand Spear" "Spiked Spear" "Soaring Spear" "Winged Spear"
+BaseType == "Akoyan Spear"
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160 
-# CustomAlertSound "33_Hammer.mp3" 150
+CustomAlertSound "33_Hammer.mp3" 150
 PlayEffect Blue
 MinimapIcon 1 Blue Cross
-SetFontSize 50
+SetFontSize 47
 DisableDropSound True
 
 #一般等級稀有
-Hide
+Show
 Class "Spears"
 Rarity = Rare
-BaseType == "Seaglass Spear" "Striking Spear" "Akoyan Spear" "Grand Spear" "Spiked Spear" "Soaring Spear" "Winged Spear"
+BaseType == "Akoyan Spear"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "33_Hammer.mp3" 200
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 42
+SetFontSize 40
+DisableDropSound True
+
+#白色魔法
+Show
+AreaLevel <= 78
+Corrupted False
+Mirrored False
+Class "Spears"
+Rarity <= Magic
+BaseType == "Akoyan Spear"
+SetBorderColor 255 255 255
+SetBackgroundColor 40 40 160
+SetFontSize 36
 DisableDropSound True
 
 #拓荒低階長矛
 #迅捷長矛(擲出速度+) 羽翅長矛(攻速1.7)
 Show
+Corrupted False
+Mirrored False
 AreaLevel <= 65
 Class "Spears"
 Rarity <= Magic
 BaseType == "Swift Spear" "Winged Spear"
-SetBorderColor 153 204 255
-SetBackgroundColor 10 10 70 
-# CustomAlertSound "33_Hammer.mp3" 150
+SetBorderColor 255 255 255
+SetBackgroundColor 40 40 160
+CustomAlertSound "33_Hammer.mp3" 150
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+MinimapIcon 2 Blue Cross
+SetFontSize 44
 DisableDropSound True
 
 Show
+Corrupted False
+Mirrored False
 Class "Spears"
 Rarity <= Magic
 BaseType == "Swift Spear" "Winged Spear"
-SetBorderColor 153 204 255
-SetBackgroundColor 10 10 70 
-SetFontSize 45
+SetBorderColor 255 255 255
+SetBackgroundColor 40 40 160
+SetFontSize 42
 DisableDropSound True
 
 #單手爪
@@ -8139,8 +8097,6 @@ SetTextColor 255 255 255
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160
 SetFontSize 40
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
 DisableDropSound True
 
 #81等稀有級高亮
@@ -8151,7 +8107,7 @@ Rarity <= Magic
 BaseType == "Wolfbone Claw" "Talon Claw" 
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160 
-# CustomAlertSound "33_Hammer.mp3" 150
+CustomAlertSound "33_Hammer.mp3" 150
 PlayEffect Blue
 MinimapIcon 1 Blue Cross
 SetFontSize 50
@@ -8164,13 +8120,13 @@ Rarity = Rare
 BaseType == "Wolfbone Claw" "Talon Claw" 
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "33_Hammer.mp3" 200
+CustomAlertSound "33_Hammer.mp3" 200
 PlayEffect Blue
 MinimapIcon 1 Blue Cross
 SetFontSize 40
 
 #單手鎚
-#熔火之鎚(火傷)、劫掠之鎚(最大物傷) 艾古亞棍棒(必定擊中) 強化之錘(目眩)
+#熔火之鎚(火傷)、劫掠之鎚(最大物傷) 艾古亞棍棒(必定擊中) 
 #81等白色魔法高亮
 Hide
 Corrupted False
@@ -8178,26 +8134,24 @@ Mirrored False
 ItemLevel >= 81
 Class "One Hand Maces"
 Rarity <= Magic
-BaseType == "Molten Hammer" "Marauding Mace" "Akoyan Club" "Fortified Hammer"
+BaseType == "Molten Hammer" "Marauding Mace" "Akoyan Club" 
 SetTextColor 250 250 255
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160
-SetFontSize 42
-PlayEffect Blue
-MinimapIcon 2 Blue Cross
+SetFontSize 40
 DisableDropSound True
 
-#82等稀有級高亮
+#81等稀有級高亮
 Hide
 ItemLevel >= 81
 Class "One Hand Maces"
 Rarity = Rare
-BaseType == "Molten Hammer" "Marauding Mace" "Akoyan Club" "Fortified Hammer"
+BaseType == "Molten Hammer" "Marauding Mace" "Akoyan Club" 
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160 
-# CustomAlertSound "33_Hammer.mp3" 150
+CustomAlertSound "33_Hammer.mp3" 150
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
+MinimapIcon 2 Blue Cross
 SetFontSize 46
 DisableDropSound True
 
@@ -8205,32 +8159,29 @@ DisableDropSound True
 Hide
 Class "One Hand Maces"
 Rarity = Rare
-BaseType == "Molten Hammer" "Marauding Mace" "Akoyan Club" "Fortified Hammer"
+BaseType == "Molten Hammer" "Marauding Mace" "Akoyan Club" 
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "33_Hammer.mp3" 200
+CustomAlertSound "33_Hammer.mp3" 200
 PlayEffect Blue
 SetFontSize 40
 
 ###[雙手近戰武器基底]###
 #魔符Talisman(德魯伊雙手軍用武器)
 
-#天雷魔符(感電幅度)、聖賢魔符(最大盛怒)、銳爪魔符(召喚物傷害)、翠玉魔符(最高素質)
-
-#81等白色魔法高亮
+#聖賢魔符(最大盛怒)、銳爪魔符(召喚物傷害)、翠玉魔符(最高素質) "Maji Talisman" "Fang Talisman" "Jade Talisman"
+#天雷魔符(感電幅度)
+#81等白色魔法
 Show
 Corrupted False
 Mirrored False
 ItemLevel >= 81
 Class "Talismans"
 Rarity <= Magic
-BaseType == "Thunder Talisman" "Maji Talisman" "Fang Talisman" "Jade Talisman"
-SetTextColor 250 250 255
+BaseType == "Thunder Talisman"
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160
-SetFontSize 42
-PlayEffect Blue
-MinimapIcon 2 Blue Cross
+SetFontSize 40
 DisableDropSound True
 
 #81等稀有級高亮
@@ -8256,6 +8207,19 @@ SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
 SetFontSize 40
+DisableDropSound True
+
+#一般白色魔法
+Hide
+AreaLevel <= 78
+Corrupted False
+Mirrored False
+Class "Talismans"
+Rarity <= Magic
+BaseType == "Thunder Talisman" "Maji Talisman" "Fang Talisman" "Jade Talisman"
+SetBorderColor 153 204 255
+SetBackgroundColor 40 40 160
+SetFontSize 36
 DisableDropSound True
 
 ##雙手劍
@@ -8269,9 +8233,8 @@ BaseType == "Ultra Greatsword"
 SetTextColor 250 250 255
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160
-# CustomAlertSound "31_Weapon.mp3" 200
+CustomAlertSound "31_Weapon.mp3" 200
 SetFontSize 40
-PlayEffect Blue
 MinimapIcon 1 Blue Cross
 
 #81等稀有級高亮
@@ -8282,7 +8245,7 @@ Rarity = Rare
 BaseType == "Ultra Greatsword"
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160 
-# CustomAlertSound "31_Weapon.mp3" 200
+CustomAlertSound "31_Weapon.mp3" 200
 PlayEffect Blue
 MinimapIcon 1 Blue Cross
 SetFontSize 46
@@ -8295,7 +8258,7 @@ Rarity = Rare
 BaseType == "Ultra Greatsword"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "31_Weapon.mp3" 200
+CustomAlertSound "31_Weapon.mp3" 200
 PlayEffect Blue
 SetFontSize 40
 
@@ -8310,10 +8273,8 @@ Rarity <= Magic
 BaseType == "Zealot Greathammer" "Fanatic Greathammer" "Aberrant Sledge"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "33_Hammer.mp3" 200
 PlayEffect Blue
-MinimapIcon 2 Blue Cross
-SetFontSize 44
+SetFontSize 40
 DisableDropSound True
 
 #塔赫亞巨棍棒(壓碎)鐵木巨鎚(最高物傷)、毀滅重錘(擊殺爆炸) 盲信巨錘(打擊擴散) 、雪橇(0.5)
@@ -8328,10 +8289,7 @@ BaseType == "Tawhoan Greatclub" "Ironwood Greathammer" "Ruination Maul" "Fanatic
 SetTextColor 250 250 255
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160
-# CustomAlertSound "33_Hammer.mp3" 150
-SetFontSize 42
-PlayEffect Blue
-MinimapIcon 2 Blue Cross
+SetFontSize 38
 DisableDropSound True
 
 #81等稀有級高亮
@@ -8342,10 +8300,9 @@ Rarity = Rare
 BaseType == "Tawhoan Greatclub" "Ironwood Greathammer" "Ruination Maul" "Fanatic Greathammer" "Aberrant Sledge"
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160 
-# CustomAlertSound "33_Hammer.mp3" 200
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 46
+MinimapIcon 2 Blue Cross
+SetFontSize 42
 DisableDropSound True
 
 #一般等級稀有
@@ -8355,8 +8312,6 @@ Rarity = Rare
 BaseType == "Tawhoan Greatclub" "Ironwood Greathammer" "Ruination Maul" "Fanatic Greathammer" "Aberrant Sledge"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "33_Hammer.mp3" 200
-PlayEffect Blue
 SetFontSize 40
 DisableDropSound True
 
@@ -8372,10 +8327,7 @@ Rarity <= Magic
 BaseType == "Ember Greataxe" "Vile Greataxe"
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160 
-# CustomAlertSound "33_Hammer.mp3" 100
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 40
+SetFontSize 38
 DisableDropSound True
 
 #81等稀有級高亮
@@ -8386,10 +8338,10 @@ Rarity = Rare
 BaseType == "Ember Greataxe" "Vile Greataxe"
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160 
-# CustomAlertSound "33_Hammer.mp3" 100
+CustomAlertSound "33_Hammer.mp3" 100
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 50
+MinimapIcon 2 Blue Cross
+SetFontSize 42
 DisableDropSound True
 
 #一般等級稀有
@@ -8399,83 +8351,33 @@ Rarity = Rare
 BaseType == "Ember Greataxe" "Vile Greataxe"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "33_Hammer.mp3" 200
-PlayEffect Blue
-SetFontSize 40
-DisableDropSound True
-
-##長杖
-#死神長杖(收割) 
-##81等白色魔法稀有級高亮
-Hide
-Corrupted False
-Mirrored False
-ItemLevel >= 81
-Class "Quarterstaves"
-Rarity <= Magic
-BaseType == "Reaping Staff" 
-SetBorderColor 153 204 255
-SetBackgroundColor 40 40 160
-# CustomAlertSound "34_staff.mp3" 200
-SetFontSize 40
-PlayEffect Blue
-MinimapIcon 2 Blue Cross
-DisableDropSound True
-
-#81等稀有級高亮+音效
-Hide
-ItemLevel >= 81
-Class "Quarterstaves"
-Rarity = Rare
-BaseType == "Reaping Staff" 
-SetBorderColor 250 191 0
-SetBackgroundColor 40 40 160
-# CustomAlertSound "34_staff.mp3" 200
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 46
-DisableDropSound True
-
-#一般等級稀有
-Hide
-Class "Quarterstaves"
-Rarity = Rare
-BaseType == "Reaping Staff" 
-SetBorderColor 153 204 255
-SetBackgroundColor 10 10 70 
-PlayEffect Blue
 SetFontSize 40
 DisableDropSound True
 
 ###[雙手法師武器基底]###
-
-#鳴響長杖(咒符之力) 貪婪長杖(血肉盛宴) 永凍長杖(冰雪之心) 黑暗長杖(暗夜血契) 棲息長杖(0.5版)
+#鳴響長杖(咒符之力) 貪婪長杖(血肉盛宴) 永凍長杖(冰雪之心) 黑暗長杖(暗夜血契) 棲羽長杖(烏鴉) 咆哮長杖(釋放) 映像長杖(鏡面折射)
 #81等白色魔法級高亮
 Hide
 Corrupted False
 Mirrored False
-ItemLevel >= 81
 Class "Staves"
 Rarity <= Magic
-BaseType == "Chiming Staff" "Ravenous Staff" "Permafrost Staff" "Dark Staff" "Perching Staff"
-ItemLevel >= 82
+BaseType == "Chiming Staff" "Ravenous Staff" "Permafrost Staff" "Dark Staff" "Perching Staff" "Roaring Staff" "Reflecting Staff"
+ItemLevel >= 81
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160
-# CustomAlertSound "34_staff.mp3" 150
-SetFontSize 40
-PlayEffect Blue
-MinimapIcon 2 Blue Cross
+SetFontSize 38
 DisableDropSound True
 
 #81等稀有級高亮+音效
-Hide
+Show
 ItemLevel >= 81
 Class "Staves"
 Rarity <= Rare
-BaseType == "Chiming Staff" "Ravenous Staff" "Permafrost Staff" "Dark Staff" "Perching Staff"
+BaseType == "Chiming Staff" "Ravenous Staff" "Permafrost Staff" "Dark Staff" "Perching Staff" "Roaring Staff" "Reflecting Staff"
 SetBorderColor 250 102 102
 SetBackgroundColor 40 40 160
-# CustomAlertSound "34_staff.mp3" 150
+CustomAlertSound "34_staff.mp3" 150
 PlayEffect Red
 MinimapIcon 1 Red Star
 SetFontSize 46
@@ -8485,7 +8387,7 @@ DisableDropSound True
 Hide
 Class "Staves"
 Rarity = Rare
-BaseType == "Chiming Staff" "Ravenous Staff" "Permafrost Staff" "Dark Staff" "Perching Staff"
+BaseType == "Chiming Staff" "Ravenous Staff" "Permafrost Staff" "Dark Staff" "Perching Staff" "Roaring Staff" "Reflecting Staff"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
@@ -8493,53 +8395,63 @@ SetFontSize 40
 DisableDropSound True
 
 ##征戰長杖(細杖)
-# 螺栓細杖-閃電傷 、打擊細杖(近戰打擊範圍) 夢境細杖(最高物傷) 碎顱細杖(擊中目眩) 剃刃細杖(最低物傷高) 守衛營杖(0.5版)
+#螺栓細杖-閃電傷、碎顱細杖(擊中目眩)、剃刃細杖(最低物傷高) "Bolting Quarterstaff" "Skullcrusher Quarterstaff" 
+#打擊細杖(近戰打擊範圍)、夢境細杖(最高物傷)、守衛營杖(0.5版)
 ##81等白色魔法稀有級高亮
-Hide
+Show
 Corrupted False
 Mirrored False
 ItemLevel >= 81
 Rarity <= Magic
 Class "Quarterstaves"
-BaseType == "Bolting Quarterstaff" "Striking Quarterstaff" "Dreaming Quarterstaff" "Skullcrusher Quarterstaff" "Razor Quarterstaff" "Warding Quarterstaff"
+BaseType == "Striking Quarterstaff" "Dreaming Quarterstaff" "Razor Quarterstaff" "Warding Quarterstaff"
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160
-# CustomAlertSound "34_staff.mp3" 200
 SetFontSize 40
-PlayEffect Blue
-MinimapIcon 2 Blue Cross
 DisableDropSound True
 
 #81等稀有級高亮+音效
-Hide
+Show
 ItemLevel >= 81
 Class == "Quarterstaves"
 Rarity = Rare
-BaseType == "Bolting Quarterstaff" "Striking Quarterstaff" "Dreaming Quarterstaff" "Skullcrusher Quarterstaff" "Razor Quarterstaff" "Warding Quarterstaff"
+BaseType == "Striking Quarterstaff" "Dreaming Quarterstaff" "Razor Quarterstaff" "Warding Quarterstaff"
 SetBorderColor 250 102 102
 SetBackgroundColor 40 40 160
 # CustomAlertSound "34_staff.mp3" 200
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 50
+MinimapIcon 2 Blue Cross
+SetFontSize 44
 DisableDropSound True
 
 #一般等級稀有
 Hide
 Class "Quarterstaves"
 Rarity = Rare
-BaseType == "Bolting Quarterstaff" "Striking Quarterstaff" "Dreaming Quarterstaff" "Skullcrusher Quarterstaff"
+BaseType == "Striking Quarterstaff" "Dreaming Quarterstaff" "Razor Quarterstaff" "Warding Quarterstaff"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "34_staff.mp3" 200
 PlayEffect Blue
 SetFontSize 42
+DisableDropSound True
+
+#一般白色魔法
+Hide
+AreaLevel <= 78
+Corrupted False
+Mirrored False
+Rarity <= Magic
+Class "Quarterstaves"
+BaseType == "Bolting Quarterstaff" "Striking Quarterstaff" "Dreaming Quarterstaff" "Skullcrusher Quarterstaff" "Razor Quarterstaff" "Warding Quarterstaff"
+SetBorderColor 153 204 255
+SetBackgroundColor 40 40 160
+SetFontSize 36
 DisableDropSound True
 
 ###[遠距武器基底]###
 #拓荒 雙弦弓(+1箭矢) 雙生之弓(+1箭矢) 
 #拓荒一般等級稀有
-Hide
+Show
 Corrupted False
 Mirrored False
 AreaLevel <= 74
@@ -8548,10 +8460,8 @@ BaseType "Dualstring Bow" "Twin Bow"
 Rarity <= Magic 
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "32_Bow.mp3" 200
 PlayEffect Blue
-MinimapIcon 2 Blue Cross
-SetFontSize 44
+SetFontSize 42
 DisableDropSound True
 
 Hide
@@ -8561,59 +8471,53 @@ BaseType "Dualstring Bow" "Twin Bow"
 Rarity = Rare
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-# CustomAlertSound "32_Bow.mp3" 200
+CustomAlertSound "32_Bow.mp3" 200
 PlayEffect Blue
 MinimapIcon 2 Blue Cross
 SetFontSize 42
 DisableDropSound True
 
 #雙子弓(+1箭矢)
-#81等白色魔法級高亮+音效
-Hide
+#81等白色魔法級高亮
+Show
 Corrupted False
 Mirrored False
-ItemLevel = 81
+ItemLevel >= 81
 Class "Bows"
 Rarity <= Magic
 BaseType "Gemini Bow"
 SetBorderColor 255 117 117
 SetBackgroundColor 40 40 160
-CustomAlertSound "5_treasures.mp3" 200
-PlayEffect Blue
-MinimapIcon 2 Blue Cross
-SetFontSize 42
+SetFontSize 40
 DisableDropSound True
 
-#雙子弓(+1箭矢)
-#一般等級稀有
+#81等稀有
 Show
 Corrupted False
 Mirrored False
-ItemLevel >= 82
+ItemLevel >= 81
 Class "Bows"
-Rarity <= Magic
+Rarity = Rare
 BaseType "Gemini Bow"
 SetTextColor 204 102 0
 SetBorderColor 204 102 0
 SetBackgroundColor 255 255 255
-CustomAlertSound "6_Have_treasure.mp3" 300
-PlayEffect Red
-MinimapIcon 1 Red Cross
-SetFontSize 47
+CustomAlertSound "32_Bow.mp3" 200
+PlayEffect Blue
+SetFontSize 40
 DisableDropSound True
 
-#雙子弓(+1箭矢)
-#82等白色級高亮+音效
-Show
+#一般白色魔法
+Hide
 Corrupted False
 Mirrored False
+AreaLevel <= 78
 Class "Bows"
-Rarity = Rare
+Rarity <= Magic
 BaseType "Gemini Bow"
 SetBorderColor 255 117 117
 SetBackgroundColor 40 40 160
-PlayEffect Blue
-SetFontSize 42
+SetFontSize 38
 DisableDropSound True
 
 #毀滅者之弓(投射物範圍減少 50%) 狂戰者之弓(最大物傷) 心木短弓(0.5版)
@@ -8627,23 +8531,21 @@ Rarity <= Magic
 BaseType  "Obliterator Bow" "Warmonger Bow" "Heartwood Shortbow" "Heartwood Shortbow"
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160
-PlayEffect Blue
-MinimapIcon 2 Blue Cross
-SetFontSize 42
+SetFontSize 40
 DisableDropSound True
 
 #81等稀有級高亮+音效
-Hide
+Show
 ItemLevel >= 81
 Class "Bows"
 Rarity = Rare
 BaseType "Gemini Bow"  "Obliterator Bow" "Warmonger Bow" "Heartwood Shortbow"
 SetBorderColor 250 102 102
 SetBackgroundColor 40 40 160
-# CustomAlertSound "32_Bow.mp3" 300
+CustomAlertSound "32_Bow.mp3" 300
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 45
+MinimapIcon 2 Blue Cross
+SetFontSize 42
 DisableDropSound True
 
 #一般等級稀有
@@ -8657,21 +8559,19 @@ PlayEffect Blue
 SetFontSize 40
 DisableDropSound True
 
-#雙子十字弓( 額外 1 發弩箭)、 優雅十字弓(機率穿透) 
-#81等白色魔法級高亮+音效
+#優雅十字弓(機率穿透) "Elegant Crossbow"
+#雙子十字弓( 額外 1 發弩箭)
+#81等白色魔法級高亮
 Show
 Corrupted False
 Mirrored False
 ItemLevel >= 81
 Class "Crossbows"
 Rarity <= Magic
-BaseType "Gemini Crossbow" "Elegant Crossbow" 
+BaseType "Gemini Crossbow"
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
-# CustomAlertSound "52_Crossbow.mp3" 200
-SetFontSize 42
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
+SetFontSize 40
 DisableDropSound True
 
 #81等稀有級高亮+音效
@@ -8679,96 +8579,91 @@ Show
 ItemLevel >= 81
 Class "Crossbows"
 Rarity = Rare
-BaseType "Gemini Crossbow" "Elegant Crossbow" 
+BaseType "Gemini Crossbow" 
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
-# CustomAlertSound "52_Crossbow.mp3" 300
+# CustomAlertSound "52_Crossbow.mp3" 200
 PlayEffect Red
-MinimapIcon 1 Blue Cross
-SetFontSize 46
-DisableDropSound True
-
-#一般等級稀有
-Show
-Class "Crossbows"
-Rarity = Rare
-BaseType "Gemini Crossbow" "Elegant Crossbow" 
-SetBorderColor 153 204 255
-SetBackgroundColor 10 10 70 
-PlayEffect Blue
-SetFontSize 42
-DisableDropSound True
-
-#攻城十字弓 (擲彈額外一個投射物)  特拉坦加農砲(不可發射弩箭或不能裝填燃燒彈藥)
-#81等白色魔法級高亮+音效
-Show
-Corrupted False
-Mirrored False
-ItemLevel >= 81
-Class "Crossbows"
-Rarity <= Magic
-BaseType "Siege Crossbow" "trarthan cannon"
-SetBorderColor 153 204 255
-SetBackgroundColor 40 40 160
-# CustomAlertSound "52_Crossbow.mp3" 200
-SetFontSize 42
-PlayEffect Blue
 MinimapIcon 2 Blue Cross
-DisableDropSound True
-
-#81等稀有級高亮+音效
-Show
-ItemLevel >= 81
-Class "Crossbows"
-Rarity = Rare
-BaseType "Siege Crossbow" "trarthan cannon"
-SetBorderColor 250 102 102
-SetBackgroundColor 40 40 160
-# CustomAlertSound "52_Crossbow.mp3" 160
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 46
+SetFontSize 42
 DisableDropSound True
 
 #一般等級稀有
-Show
+Hide
 Class "Crossbows"
 Rarity = Rare
-BaseType "Siege Crossbow" "trarthan cannon"
+BaseType "Gemini Crossbow"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
 SetFontSize 42
 DisableDropSound True
 
-#轟擊十字弓、加農炮十字弓
+#攻城十字弓 (擲彈額外一個投射物)  特拉坦加農砲(不可發射弩箭或不能裝填燃燒彈藥) 
 #81等白色魔法級高亮+音效
 Hide
 Corrupted False
 Mirrored False
 ItemLevel >= 81
+Class "Crossbows"
+Rarity <= Magic
+BaseType "Siege Crossbow" "trarthan cannon" 
+SetBorderColor 153 204 255
+SetBackgroundColor 40 40 160
+SetFontSize 40
+DisableDropSound True
+
+#81等稀有級高亮+音效  "trarthan cannon"
+Show
+ItemLevel >= 81
+Class "Crossbows"
+Rarity = Rare
+BaseType "Siege Crossbow"
+SetBorderColor 250 102 102
+SetBackgroundColor 40 40 160
+CustomAlertSound "52_Crossbow.mp3" 160
+PlayEffect Blue
+MinimapIcon 1 Blue Cross
+SetFontSize 46
+DisableDropSound True
+
+#一般等級稀有
+Hide
+Class "Crossbows"
+Rarity = Rare
+BaseType "Siege Crossbow" "trarthan cannon"
+SetBorderColor 153 204 255
+SetBackgroundColor 10 10 70 
+PlayEffect Blue
+SetFontSize 42
+DisableDropSound True
+
+#拓荒擲彈系列
+#轟擊十字弓、砲擊十字弓(擲彈技能發射額外一個投射物)
+#70以下地圖白色魔法級高亮
+Hide
+Corrupted False
+Mirrored False
+AreaLevel <= 70
 Class "Crossbows"
 Rarity <= Magic
 BaseType "Bombard Crossbow" "Cannonade Crossbow"
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160
-# CustomAlertSound "52_Crossbow.mp3" 200
-SetFontSize 42
 PlayEffect Blue
-MinimapIcon 2 Blue Cross
+SetFontSize 40
 DisableDropSound True
 
 #81等稀有級高亮+音效
-Hide
+Show
 ItemLevel >= 81
 Class "Crossbows"
 Rarity = Rare
-BaseType "Bombard Crossbow" "Cannonade Crossbow" 
+BaseType "Bombard Crossbow" "Cannonade Crossbow"
 SetBorderColor 250 102 102
 SetBackgroundColor 40 40 160
 # CustomAlertSound "52_Crossbow.mp3" 160
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
+MinimapIcon 2 Blue Cross
 SetFontSize 46
 DisableDropSound True
 
@@ -8795,8 +8690,6 @@ Rarity <= Magic
 SetBorderColor 255 117 117
 SetBackgroundColor 10 10 70 
 SetFontSize 40
-PlayEffect Blue
-MinimapIcon 2 Blue Cross
 DisableDropSound True
 
 #81等稀有級高亮+音效
@@ -8807,7 +8700,6 @@ BaseType "Visceral Quiver" "Penetrating Quiver" "Primed Quiver"
 Rarity = Rare
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
-CustomAlertSound "5_treasures.mp3" 200
 SetFontSize 45
 PlayEffect Blue
 MinimapIcon 1 Blue Cross
@@ -8815,13 +8707,13 @@ DisableDropSound True
 
 #一般等級白色魔法
 Hide
+AreaLevel <= 78
 Class "Quivers" 
 BaseType "Visceral Quiver" "Penetrating Quiver" "Primed Quiver"
 Rarity <= Magic
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-SetFontSize 32
-PlayEffect Blue
+SetFontSize 36
 DisableDropSound True
 
 #一般等級稀有
@@ -8841,43 +8733,41 @@ DisableDropSound True
 Hide
 ItemLevel >= 81
 Class "Focus"
-BaseType "Sacred Focus"
+# aseType "Sacred Focus" "Tasalian Focus"
 Rarity <= Magic
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160
-SetFontSize 42
-PlayEffect Blue
-MinimapIcon 2 Blue Cross
+SetFontSize 40
 
 #81等稀有級高亮+音效
 Hide
 ItemLevel >= 81
 Class "Focus"
-BaseType "Sacred Focus"
+BaseType "Sacred Focus" "Tasalian Focus"
 Rarity = Rare
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
 # CustomAlertSound "35_Armor.mp3" 100
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
+MinimapIcon 2 Blue Cross
 SetFontSize 45
 DisableDropSound True
 
 #一般等級白色魔法
-#Show
-#AreaLevel <= 80
-#Class "Focus"
-#BaseType "Sacred Focus"
-#Rarity <= Magic
-#SetBorderColor 153 204 255
-#SetBackgroundColor 10 10 70 
-#SetFontSize 35
+Hide
+AreaLevel <= 79
+Class "Focus"
+BaseType "Sacred Focus" "Tasalian Focus"
+Rarity <= Magic
+SetBorderColor 153 204 255
+SetBackgroundColor 10 10 70 
+SetFontSize 38
 
 #一般等級稀有
 Hide
 Class "Focus"
 Rarity = Rare
-BaseType "Sacred Focus"
+BaseType "Sacred Focus" "Tasalian Focus"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
@@ -8886,46 +8776,46 @@ DisableDropSound True
 
 ##[盾牌]
 ##純力
-#瓦爾塔盾(高護甲) 塔赫亞塔盾(最高護甲沒格擋) 冰河要塞(0.5版新塔盾)
+#瓦爾塔盾(高護甲) "Vaal Tower Shield" 
+#塔赫亞塔盾(最高護甲沒格擋) 冰川堡壘(0.5版新塔盾)
 #81等魔法級高亮
-Hide
+Show
 ItemLevel >= 81
 Class "Shields"
-BaseType "Vaal Tower Shield" "Tawhoan Tower Shield" "Glacial Fortress"
+BaseType "Tawhoan Tower Shield" "Glacial Fortress"
 Rarity <= Magic
 SetTextColor 250 250 255
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160
-SetFontSize 42
-# CustomAlertSound "36_Heavy Armor.mp3" 180
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
+SetFontSize 40
 DisableDropSound True
 
 #81等稀有級高亮+音效
-Hide
+Show
 ItemLevel >= 81
 Class "Shields"
-BaseType "Vaal Tower Shield" "Tawhoan Tower Shield" "Glacial Fortress"
+Class "Shields"
+BaseType "Tawhoan Tower Shield" "Glacial Fortress"
 Rarity = Rare
 SetTextColor 250 191 0
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
 CustomAlertSound "5_treasures.mp3 " 180
-PlayEffect Red
-MinimapIcon 0 Blue Cross
+PlayEffect Blue
+MinimapIcon 2 Blue Cross
 SetFontSize 45
 DisableDropSound True
 
 #一般等級白色魔法
 Hide
+AreaLevel <= 78
 Class "Shields"
 BaseType "Vaal Tower Shield" "Tawhoan Tower Shield" "Glacial Fortress"
 Rarity <= Magic
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 PlayEffect Blue
-SetFontSize 40
+SetFontSize 36
 DisableDropSound True
 
 #一般等級稀有
@@ -8936,24 +8826,20 @@ Rarity = Rare
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
 CustomAlertSound "5_treasures.mp3 " 180
-PlayEffect Blue
-MinimapIcon 2 Blue Cross
-SetFontSize 42
+SetFontSize 40
 DisableDropSound True
 
 ##純敏(輕盾)
-#遠古輕盾
+#沙漠輕盾
 #81等魔法級高亮
 Hide
 ItemLevel >= 81
 Class "Bucklers"
 Rarity <= Magic
-BaseType "Ancient Buckler"
+BaseType "Desert Buckler"
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160
-SetFontSize 42
-PlayEffect Blue
-MinimapIcon 2 Blue Cross
+SetFontSize 40
 DisableDropSound True
 
 #81等稀有級高亮+音效
@@ -8961,30 +8847,31 @@ Hide
 ItemLevel >= 81
 Class "Shields"
 Rarity = Rare
-BaseType "Ancient Buckler"
+BaseType "Desert Buckler"
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
-# CustomAlertSound "36_Heavy Armor.mp3" 150
+CustomAlertSound "36_Heavy Armor.mp3" 150
 PlayEffect Blue
-MinimapIcon 1 Blue Cross
-SetFontSize 46
+MinimapIcon 2 Blue Cross
+SetFontSize 44
 DisableDropSound True
 
 #一般等級白色魔法
 Hide
+AreaLevel <= 78
 Class "Shields"
-BaseType "Ancient Buckler"
+BaseType "Desert Buckler"
 Rarity <= Magic
 BaseType "Aegis Buckler"
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
-SetFontSize 40
+SetFontSize 36
 DisableDropSound True
 
 #一般等級稀有
 Hide
 Class "Shields"
-BaseType "Ancient Buckler"
+BaseType "Desert Buckler"
 Rarity = Rare
 SetBorderColor 153 204 255
 SetBackgroundColor 10 10 70 
@@ -8993,19 +8880,17 @@ SetFontSize 42
 DisableDropSound True
 
 ##複合
-#瓦爾紋章盾(力智)、翱翔圓盾(力敏)
+#烏鋼紋章盾(力智)、耀金圓盾(力敏)
 #81等魔法級高亮
 Hide
 ItemLevel >= 81
 Class "Shields"
 Rarity <= Magic
-BaseType "Vaal Crest Shield" "Soaring Targe"
+BaseType "Blacksteel Crest Shield" "Golden Targe"
 SetTextColor 250 250 255
 SetBorderColor 153 204 255
 SetBackgroundColor 40 40 160
-SetFontSize 42
-PlayEffect Blue
-MinimapIcon 1 Blue Cross
+SetFontSize 40
 DisableDropSound True
 
 #81等稀有級高亮+音效
@@ -9013,23 +8898,21 @@ Hide
 ItemLevel >= 81
 Class "Shields"
 Rarity = Rare
-BaseType "Sacred Focus" "Soaring Targe"
+BaseType "Blacksteel Crest Shield" "Golden Targe"
 SetBorderColor 250 191 0
 SetBackgroundColor 40 40 160
-# CustomAlertSound "36_Heavy Armor.mp3" 150
-PlayEffect Blue
-SetFontSize 46
+SetFontSize 40
 DisableDropSound True
 
 #一般等級白色魔法
-#Show
-#ItemLevel <= 80
+Hide
+#AreaLevel <= 79
 #Class "Shields"
 #Rarity <= Magic
 #BaseType "Sacred Focus" "Soaring Targe"
 #SetBorderColor 153 204 255
 #SetBackgroundColor 10 10 70 
-#SetFontSize 35
+#SetFontSize 38
 DisableDropSound True
 
 #一般等級稀有
@@ -9042,10 +8925,11 @@ SetBackgroundColor 10 10 70
 PlayEffect Blue
 SetFontSize 40
 DisableDropSound True
+
+
 #--------------------------
 # 【15F金幣】Gold
 #--------------------------
-
 #堆疊金幣
 #---Gold---
 #千元金幣
@@ -9240,12 +9124,6 @@ MinimapIcon 2 Cyan Circle
 SetFontSize 46
 DisableDropSound True
 
-#一個零散金幣	
-Show
-StackSize = 1
-Class == "Stackable Currency"
-BaseType == "Gold"
-
 #--------------------------
 ##【16F可選顯示規則】
 #--------------------------
@@ -9261,7 +9139,6 @@ SetBackgroundColor 24 24 24
 SetFontSize 45
 MinimapIcon 1 White Circle
 PlayEffect White
-
 #--------------------------
 ##【16F-1 有洞雙手武器、盔甲】
 #--------------------------
@@ -9552,7 +9429,7 @@ CustomAlertSound "3_O-A.mp3" 200
 #殘酷難度
 #殘酷難度一般白色武器、防具裝備顯示最小化
 Show
-AreaLevel <= 74
+AreaLevel <= 65
 Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
 Rarity = Normal
 SetFontSize 32
@@ -9561,14 +9438,14 @@ SetFontSize 32
 Show
 Corrupted False
 Mirrored False
-AreaLevel <= 74
+AreaLevel <= 65
 Rarity = Normal
 Class "Rings" "Amulets" "Belts"
 SetFontSize 40
 
 #殘酷難度一般魔法武器、防具裝備顯示縮小化
 Show
-AreaLevel <= 74
+AreaLevel <= 65
 Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
 Rarity = Magic
 SetFontSize 35
@@ -9577,14 +9454,14 @@ SetFontSize 35
 Show
 Corrupted False
 Mirrored False
-AreaLevel <= 74
+AreaLevel <= 65
 Class "Rings" "Amulets" "Belts"
 Rarity = Magic
 SetFontSize 42
 
 #殘酷難度一般稀有武器、防具裝備顯示縮小化
 Show
-AreaLevel <= 74
+AreaLevel <= 65
 Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
 Rarity = Rare
 SetBorderColor 218 165 32
@@ -9594,31 +9471,30 @@ SetFontSize 40
 Show
 Corrupted False
 Mirrored False
-AreaLevel <= 74
+AreaLevel <= 65
 Class "Rings" "Amulets" "Belts"
 Rarity = Rare
 MinimapIcon 1 White Diamond
 PlayEffect White
 SetFontSize 40
 CustomAlertSound "3_O-A.mp3" 100
-
 #--------------------------
 ##【16F-5 高物等武器、防具裝備】
 #--------------------------
-#高物等82其他稀有金裝(階級0~2)
+#高物等82其他稀有金裝(階級2+)
 Show
-UnidentifiedItemTier <= 2
+UnidentifiedItemTier >= 2
 ItemLevel >= 82
 Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
 Rarity = Rare
 SetBorderColor 218 165 32
 SetBackgroundColor 168 64 64
 PlayEffect White
-SetFontSize 44
+SetFontSize 40
 
-#高物等82稀有飾品(階級0~2)
+#高物等82稀有飾品(階級2+)
 Show
-UnidentifiedItemTier <= 2
+UnidentifiedItemTier >= 2
 ItemLevel >= 82
 Class "Rings" "Amulets" "Belts"
 Rarity = Rare
@@ -9626,17 +9502,6 @@ SetBorderColor 218 165 32
 SetBackgroundColor 168 64 64
 PlayEffect White
 SetFontSize 44
-
-#高物等82+其他稀有金裝(階級0~2)
-Show
-UnidentifiedItemTier <= 2
-ItemLevel >= 82
-Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
-Rarity = Rare
-SetBorderColor 218 165 32
-SetBackgroundColor 168 64 64
-PlayEffect White
-SetFontSize 42
 
 #高物等82+高價值白色魔法飾品
 Show
@@ -9761,7 +9626,7 @@ Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand
 Rarity = Rare
 SetBorderColor 218 165 32
 SetBackgroundColor 74 74 74
-SetFontSize 42
+SetFontSize 40
 
 #其他稀有飾品(階級4+)
 Show
@@ -9771,32 +9636,42 @@ Rarity = Rare
 SetBorderColor 218 165 32
 SetBackgroundColor 74 74 74
 PlayEffect Red
-SetFontSize 45
+SetFontSize 46
 MinimapIcon 2 Red Diamond
 
-#其他稀有金裝(階級2+)
-Hide
-UnidentifiedItemTier >= 2
-Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
+#其他稀有金裝(階級4+)
+Show
+ItemLevel >= 74
+UnidentifiedItemTier >= 4
+Class "Quarterstaves" "Gloves" "Boots" "Helmets"
 Rarity = Rare
 SetBorderColor 218 165 32
 SetBackgroundColor 74 74 74
-SetFontSize 40
+SetFontSize 38
 
-#其他稀有飾品(階級2+)
+Hide
+ItemLevel >= 74
+UnidentifiedItemTier >= 4
+Class "Talismans" "Body Armours" "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
+Rarity = Rare
+SetBorderColor 218 165 32
+SetBackgroundColor 74 74 74
+SetFontSize 38
+
+#其他稀有飾品(階級3+)
 Show
+ItemLevel >= 74
 UnidentifiedItemTier >= 3
 Class "Rings" "Amulets" "Belts"
 Rarity = Rare
 SetBorderColor 218 165 32
 SetBackgroundColor 74 74 74
-PlayEffect White
 SetFontSize 42
 #--------------------------
 ##【16F-7 與圖階段武器、防具裝備顯示】
 #--------------------------
 #地圖階段顯示其餘白色魔法飾品腰帶
-Hide
+Show
 AreaLevel <= 80
 Class "Rings" "Amulets" "Belts"
 Rarity <= Magic
@@ -9810,42 +9685,6 @@ Class "Rings" "Amulets" "Belts"
 Rarity = Rare
 SetBorderColor 218 165 32
 SetFontSize 42
-
-#地圖階段顯示其餘高物等稀有武器、防具 (自訂義)
-Show
-ItemLevel >= 80
-AreaLevel < 80
-Rarity = Rare
-Class "Quarterstaves" "Talismans" "Gloves" "Boots" "Body Armours" "Helmets"
-SetBorderColor 64 64 64
-SetBorderColor 218 165 32
-SetFontSize 40
-
-Hide
-ItemLevel >= 80
-AreaLevel < 80
-Rarity = Rare
-Class ==  "Sceptres" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Crossbows" "Quivers" "Shields" "Foci" "Spears"
-SetBorderColor 64 64 64
-SetBorderColor 218 165 32
-SetFontSize 40
-
-#地圖階段顯示其餘一般稀有武器、防具 (自訂義)
-Show
-AreaLevel < 80
-Rarity = Rare
-Class "Quarterstaves" "Talismans" "Gloves" "Boots" "Body Armours" "Helmets"
-SetBorderColor 153 204 255
-SetBackgroundColor 108 108 108
-SetFontSize 36
-
-Hide
-AreaLevel < 80
-Rarity = Rare
-Class ==  "Sceptres" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Crossbows" "Quivers" "Shields" "Foci" "Spears"
-SetBorderColor 153 204 255
-SetBackgroundColor 108 108 108
-SetFontSize 36
 
 #--------------------------
 ##【16F-8 拆裝顯示專區】
@@ -9884,7 +9723,6 @@ SetBorderColor 200 200 200
 CustomAlertSound "42_Stones.mp3" 150
 PlayEffect White
 SetFontSize 40
-
 #------------------------------------
 #   [16F-9]隱藏 未鑑定階級1以下
 #------------------------------------
@@ -9894,9 +9732,9 @@ Hide
 	Rarity <= Rare
 	Class = "Bow" "Bows" "Crossbows" "Crossbow" "One Hand Maces" "Quarterstaves" "Quivers" "Sceptres" "Spears" "Staves" "Two Hand Maces" "Wands" "Talismans" 
 	AreaLevel >= 80
-	ItemLevel <= 80
-	SetFontSize 34
+	SetFontSize 36
 	SetBackgroundColor 20 20 0 0
+	
 #護甲類	    
 Hide 
 	UnidentifiedItemTier <= 1
@@ -9906,8 +9744,7 @@ Hide
 	Rarity <= Rare
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	AreaLevel >= 80
-	ItemLevel <= 80
-	SetFontSize 34
+	SetFontSize 36
 	SetBackgroundColor 20 20 0 0
 #迴避甲	
 Hide
@@ -9918,8 +9755,7 @@ Hide
 	Rarity <= Rare
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	AreaLevel >= 80
-	ItemLevel <= 80
-	SetFontSize 30
+	SetFontSize 36
 	SetBackgroundColor 20 20 0 0
 #能量甲	
 Hide  
@@ -9930,8 +9766,7 @@ Hide
 	Rarity <= Rare
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	AreaLevel >= 80
-	ItemLevel <= 80
-	SetFontSize 32
+	SetFontSize 36
 	SetBackgroundColor 20 20 0 0
 #護甲迴避		
 Hide  
@@ -9942,8 +9777,7 @@ Hide
 	Rarity <= Rare
     Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
     AreaLevel >= 80
-	ItemLevel <= 80
-	SetFontSize 32
+	SetFontSize 36
 	SetBackgroundColor 20 20 0 0
 #護甲能量		
 Hide  
@@ -9951,11 +9785,10 @@ Hide
 	BaseEnergyShield > 0
 	BaseEvasion 0
 	BaseArmour > 0
-	Rarity Rare
+	Rarity <= Rare
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	AreaLevel >= 80
-	ItemLevel <= 80
-	SetFontSize 32
+	SetFontSize 36
 	SetBackgroundColor 20 20 0 0
 #迴避能量	
 Hide 
@@ -9966,35 +9799,8 @@ Hide
 	Rarity <= Rare
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	AreaLevel >= 80
-	ItemLevel <= 80
-	SetFontSize 32
+	SetFontSize 36
 	SetBackgroundColor 20 20 0 0
-
-#--------------------------
-##【16F-9 全域和與圖階段顯示】
-#--------------------------	 
-#全域顯示白色/魔法飾品腰帶
-Show
-Class "Rings" "Amulets" "Belts"
-Rarity <= Magic
-SetBorderColor 128 128 128
-SetFontSize 38
-
-#全域顯示一般稀有飾品腰帶
-Show
-Rarity = Rare
-Class "Rings" "Amulets" "Belts"
-SetBorderColor 200 200 200
-SetBackgroundColor 64 64 64
-SetFontSize 40
-
-#全域顯示一般稀有武器、防具
-Show
-Rarity = Rare
-Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
-SetBorderColor 200 200 200
-SetBackgroundColor 64 64 64
-SetFontSize 36
 
 #速刷顯示80+物等以下其他白色魔法飾品腰帶(預設關閉)
 #Show
@@ -10113,8 +9919,8 @@ SetFontSize 28
 Hide
 Class == "Stackable Currency"
 BaseType "Shard"
-AreaLevel >= 70
-SetFontSize 32
+AreaLevel >= 79
+SetFontSize 36
  
 #低品質「藥劑」在地圖階段隱藏，除非有高品質10%以上。
 Hide
@@ -10129,21 +9935,21 @@ AreaLevel >= 74
 Rarity = Magic
 Class "Life Flasks"
 SetBorderColor 255 130 110
-SetFontSize 32
+SetFontSize 35
 
 Hide
 AreaLevel >= 74
 Rarity = Magic
 Class "Mana Flasks" 
 SetBorderColor 80 110 255
-SetFontSize 32
+SetFontSize 35
 #------------------------------------
 #   [17F-1]隱藏高等地圖的通貨
 #------------------------------------
 # B級通貨 高階增幅石、高階蛻變石
 # Currency Tier B:Augmentation、  Transmutation
 #Hide
-#AreaLevel >= 81
+#AreaLevel >= 80
 #Class "Stackable Currency"
 #BaseType == "Greater Orb of Augmentation" "Greater Orb of Transmutation"  
 #SetTextColor 255 207 132
@@ -10155,7 +9961,7 @@ SetFontSize 32
 # B1級通貨 點金石
 # Currency Tier B1: AlchemyChance 
 #Hide
-#AreaLevel >= 81
+#AreaLevel >= 80
 #Class == "Stackable Currency"
 #BaseType == "Orb of Alchemy" 
 #SetTextColor 255 207 132
@@ -10167,7 +9973,7 @@ SetFontSize 32
 # B2級通貨 富豪石
 # Currency Tier B2:Rega
 #Hide
-#AreaLevel >= 81
+#AreaLevel >= 80
 #Class == "Stackable Currency"
 #BaseType == "Regal Orb" 
 #SetTextColor 255 207 132
@@ -10328,16 +10134,16 @@ Rarity = Rare
 Class "Amulets" "Rings" "Belts"
 SetFontSize 30
 #------------------------------------
-#   [17F-6]速刷高階地圖隱藏未鑑定 稀有&魔法級
+#   [17F-6]速刷高階地圖隱藏未鑑定 稀有
 #------------------------------------
-#地圖階段81以上隱藏其他全部階級3 武器、裝備
+#地圖階段80以上隱藏其他全部階級3 武器、裝備
 #前面已設定顯示特殊基底不受影響
 #武器類
 Hide  
     Quality <= 20
-    AreaLevel >= 81
-	UnidentifiedItemTier = 3
-	Rarity Rare Magic
+    AreaLevel >= 80
+	UnidentifiedItemTier <= 2
+	Rarity Rare
 	Class = "Bow" "Bows" "Crossbows" "Crossbow" "One Hand Maces" "Quarterstaves" "Quivers" "Sceptres" "Spears" "Staves" "Two Hand Maces" "Wands" "Talismans" 
 	SetFontSize 35
 	SetBorderColor 0 240 190
@@ -10346,12 +10152,12 @@ Hide
 #護甲類	    
 Hide 
     Quality <= 20
-    AreaLevel >= 81
-	UnidentifiedItemTier = 3
+    AreaLevel >= 80
+	UnidentifiedItemTier <= 2
 	BaseEnergyShield 0
 	BaseEvasion 0
 	BaseArmour > 0
-	Rarity Rare Magic
+	Rarity Rare
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	SetFontSize 35
 	SetBorderColor 0 240 190
@@ -10360,12 +10166,12 @@ Hide
 #迴避甲	
 Hide
     Quality <= 20
-    AreaLevel >= 81
-	UnidentifiedItemTier = 3
+    AreaLevel >= 80
+	UnidentifiedItemTier <= 2
 	BaseEnergyShield 0
 	BaseEvasion > 0
 	BaseArmour 0
-	Rarity Rare Magic
+	Rarity Rare
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	SetFontSize 35
 	SetBorderColor 0 240 190
@@ -10374,7 +10180,8 @@ Hide
 #能量甲	
 Hide  
     Quality <= 20
-	UnidentifiedItemTier = 3
+	AreaLevel >= 80
+	UnidentifiedItemTier <= 2
 	BaseEnergyShield > 0
 	BaseEvasion 0
 	BaseArmour 0
@@ -10387,12 +10194,12 @@ Hide
 #護甲迴避		
 Hide  
     Quality <= 20
-    AreaLevel >= 81
-	UnidentifiedItemTier = 3
+    AreaLevel >= 80
+	UnidentifiedItemTier <= 2
 	BaseEnergyShield 0
 	BaseEvasion > 0
 	BaseArmour > 0
-	Rarity Rare Magic
+	Rarity Rare
     Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	SetFontSize 35
 	SetBorderColor 0 240 190
@@ -10402,12 +10209,12 @@ Hide
 #護甲能量		
 Hide  
     Quality <= 20
-    AreaLevel >= 81
-	UnidentifiedItemTier = 3
+    AreaLevel >= 80
+	UnidentifiedItemTier <= 2
 	BaseEnergyShield > 0
 	BaseEvasion 0
 	BaseArmour > 0
-	Rarity Rare Magic
+	Rarity Rare
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	SetFontSize 35
 	SetBorderColor 0 240 190
@@ -10416,36 +10223,36 @@ Hide
 #迴避能量	
 Hide 
     Quality <= 20
-    AreaLevel >= 81
-	UnidentifiedItemTier = 3
+    AreaLevel >= 80
+	UnidentifiedItemTier <= 2
 	BaseEnergyShield > 0
 	BaseEvasion > 0
 	BaseArmour 0
-	Rarity Rare Magic
+	Rarity Rare
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	SetFontSize 35
 	SetBorderColor 0 240 190
     SetBackgroundColor 0 90 90 
 
 #飾品類
-Hide 
-    Quality <= 20
-    AreaLevel >= 81
-	UnidentifiedItemTier = 3
-	Rarity Rare Magic
-	Class == "Amulets" "Rings" "Belts"
-	SetFontSize 35
-	SetBorderColor 0 240 190
-    SetBackgroundColor 0 90 90 
+#Hide 
+#    Quality <= 20
+#    AreaLevel >= 80
+#	UnidentifiedItemTier <= 2
+#	Rarity Rare
+#	Class == "Amulets" "Rings" "Belts"
+#	SetFontSize 38
+#	SetBorderColor 0 240 190
+#    SetBackgroundColor 0 90 90 
 	
-#地圖階段80以上隱藏其他全部階級3 武器、裝備
+#地圖階段81以上隱藏其他全部階級3 武器、裝備
 #前面已設定顯示特殊基底不受影響
 #武器類
 Hide  
     Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 3
-	Rarity Rare Magic
+    AreaLevel >= 81
+	UnidentifiedItemTier <= 3
+	Rarity Rare 
 	Class = "Bow" "Bows" "Crossbows" "Crossbow" "One Hand Maces" "Quarterstaves" "Quivers" "Sceptres" "Spears" "Staves" "Two Hand Maces" "Wands" "Talismans" 
 	SetFontSize 30
 	SetBorderColor 0 240 190
@@ -10454,12 +10261,12 @@ Hide
 #護甲類	    
 Hide 
     Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 3
+    AreaLevel >= 81
+	UnidentifiedItemTier <= 3
 	BaseEnergyShield 0
 	BaseEvasion 0
 	BaseArmour > 0
-	Rarity Rare Magic
+	Rarity Rare 
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	SetFontSize 30
 	SetBorderColor 0 240 190
@@ -10468,12 +10275,12 @@ Hide
 #迴避甲	
 Hide
     Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 3
+    AreaLevel >= 81
+	UnidentifiedItemTier <= 3
 	BaseEnergyShield 0
 	BaseEvasion > 0
 	BaseArmour 0
-	Rarity Rare Magic
+	Rarity Rare 
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	SetFontSize 30
 	SetBorderColor 0 240 190
@@ -10482,12 +10289,12 @@ Hide
 #能量甲	
 Hide  
     Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 3
+    AreaLevel >= 81
+	UnidentifiedItemTier <= 3
 	BaseEnergyShield > 0
 	BaseEvasion 0
 	BaseArmour 0
-	Rarity Rare Magic
+	Rarity Rare 
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	SetFontSize 30
 	SetBorderColor 0 240 190
@@ -10497,12 +10304,12 @@ Hide
 #護甲迴避		
 Hide  
     Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 3
+    AreaLevel >= 81
+	UnidentifiedItemTier <= 3
 	BaseEnergyShield 0
 	BaseEvasion > 0
 	BaseArmour > 0
-	Rarity Rare Magic
+	Rarity Rare 
     Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	SetFontSize 30
 	SetBorderColor 0 240 190
@@ -10512,12 +10319,12 @@ Hide
 #護甲能量		
 Hide  
     Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 3
+    AreaLevel >= 81
+	UnidentifiedItemTier <= 3
 	BaseEnergyShield > 0
 	BaseEvasion 0
 	BaseArmour > 0
-	Rarity Rare Magic
+	Rarity Rare 
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	SetFontSize 30
 	SetBorderColor 0 240 190
@@ -10527,230 +10334,123 @@ Hide
 #迴避能量	
 Hide 
     Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 3
+    AreaLevel >= 81
+	UnidentifiedItemTier <= 3
 	BaseEnergyShield > 0
 	BaseEvasion > 0
 	BaseArmour 0
-	Rarity Rare Magic
+	Rarity Rare
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
 	SetFontSize 30
 	SetBorderColor 0 240 190
     SetBackgroundColor 0 90 90 
 	
 #飾品類
-Hide 
-    Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 3
-	Rarity Rare Magic
-	Class == "Amulets" "Rings" "Belts"
-	SetFontSize 30
-	SetBorderColor 0 240 190
-    SetBackgroundColor 0 90 90 
-	
-#地圖階段80以上隱藏其他全部階級2以下 武器、裝備
-#前面已設定顯示特殊基底不受影響
-#武器類
-Hide  
-    Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 2
-	Rarity Rare Magic
-	Class = "Bow" "Bows" "Crossbows" "Crossbow" "One Hand Maces" "Quarterstaves" "Quivers" "Sceptres" "Spears" "Staves" "Two Hand Maces" "Wands" "Talismans" 
-	SetFontSize 25
-	SetBackgroundColor 20 20 0 0
-	
-#護甲類	    
-Hide 
-    Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 2
-	BaseEnergyShield 0
-	BaseEvasion 0
-	BaseArmour > 0
-	Rarity Rare Magic
-	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	SetFontSize 25
-	SetBackgroundColor 20 20 0 0
-	
-#迴避甲	
-Hide
-    Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 2
-	BaseEnergyShield 0
-	BaseEvasion > 0
-	BaseArmour 0
-	Rarity Rare Magic
-	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	SetFontSize 25
-	SetBackgroundColor 20 20 0 0
+#Hide 
+#    Quality <= 20
+#    AreaLevel >= 81
+#	UnidentifiedItemTier <= 3
+#	Rarity Rare
+#	Class == "Amulets" "Rings" "Belts"
+#	SetFontSize 30
+#	SetBorderColor 0 240 190
+#    SetBackgroundColor 0 90 90 
 
-#能量甲	
-Hide  
-    Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 2
-	BaseEnergyShield > 0
-	BaseEvasion 0
-	BaseArmour 0
-	Rarity Rare Magic
-	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	SetFontSize 25
-	SetBackgroundColor 20 20 0 0
-
-#護甲迴避		
-Hide  
-    Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 2
-	BaseEnergyShield 0
-	BaseEvasion > 0
-	BaseArmour > 0
-	Rarity Rare Magic
-    Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	SetFontSize 25
-	SetBackgroundColor 20 20 0 0
-
-	
-#護甲能量		
-Hide  
-    Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 2
-	BaseEnergyShield > 0
-	BaseEvasion 0
-	BaseArmour > 0
-	Rarity Rare Magic
-	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	SetFontSize 25
-	SetBackgroundColor 20 20 0 0
- 	
-#迴避能量	
-Hide 
-    Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier  <= 2
-	BaseEnergyShield > 0
-	BaseEvasion > 0
-	BaseArmour 0
-	Rarity Rare Magic
-	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	SetFontSize 25
-	SetBackgroundColor 20 20 0 0
-
-#飾品類
-Hide 
-    Quality <= 20
-    AreaLevel >= 80
-	UnidentifiedItemTier = 2
-	Rarity Rare Magic
-	Class == "Amulets" "Rings" "Belts"
-	SetFontSize 25
-	SetBackgroundColor 20 20 0 0	
-	
 #------------------------------------
-#   [17F-7]隱藏 未鑑定階級２以下 稀有&魔法級
+#   [17F-7]隱藏 未鑑定階級1以下 稀有
 #------------------------------------
-#地圖階段65以上物品等級79以下隱藏其他全部階級2以下武器、裝備
+#地圖階段70以上物品隱藏其他全部階級1以下武器、裝備
 #前面已設定顯示特殊基底不受影響
 Hide  
-    UnidentifiedItemTier <= 2
-	Rarity Rare  Magic
+    UnidentifiedItemTier <= 1
+	Rarity Rare 
 	Class = "Bow" "Bows" "Crossbows" "Crossbow" "One Hand Maces" "Quarterstaves" "Quivers" "Sceptres" "Spears" "Staves" "Two Hand Maces" "Wands" "Talismans" 
-	AreaLevel >= 65
-	ItemLevel <= 79
-	SetFontSize 23
+	AreaLevel >= 70
+	SetFontSize 32
 	SetBackgroundColor 20 20 0 0
 
 #護甲類	    
 Hide 
-	UnidentifiedItemTier <= 2
+	UnidentifiedItemTier <= 1
 	BaseEnergyShield 0
 	BaseEvasion 0
 	BaseArmour > 0
-	Rarity Rare  Magic
+	Rarity Rare 
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	AreaLevel >= 65
-	ItemLevel <= 79
-	SetFontSize 23
+	AreaLevel >= 70
+	SetFontSize 32
 	SetBackgroundColor 20 20 0 0
 
 #迴避甲	
 Hide
-	UnidentifiedItemTier <= 2
+	UnidentifiedItemTier <= 1
 	BaseEnergyShield 0
 	BaseEvasion > 0
 	BaseArmour 0
-	Rarity Rare  Magic
+	Rarity Rare  
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	AreaLevel >= 65
+	AreaLevel >= 70
 	ItemLevel <= 79
-	SetFontSize 23
+	SetFontSize 32
 	SetBackgroundColor 20 20 0 0
 
 #能量甲	
 Hide  
-	UnidentifiedItemTier <= 2
+	UnidentifiedItemTier <= 1
 	BaseEnergyShield > 0
 	BaseEvasion 0
 	BaseArmour 0
-	Rarity Rare  Magic
+	Rarity Rare 
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	AreaLevel >= 65
-	ItemLevel <= 79
-	SetFontSize 23
+	AreaLevel >= 70
+	SetFontSize 32
 	SetBackgroundColor 20 20 0 0
 
 #護甲迴避		
 Hide  
-	UnidentifiedItemTier <= 2
+	UnidentifiedItemTier <= 1
 	BaseEnergyShield 0
 	BaseEvasion > 0
 	BaseArmour > 0
-	Rarity Rare  Magic
+	Rarity Rare  
     Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	AreaLevel >= 65
+	AreaLevel >= 70
 	ItemLevel <= 79
-	SetFontSize 23
+	SetFontSize 32
 	SetBackgroundColor 20 20 0 0
 
 #護甲能量		
 Hide  
-	UnidentifiedItemTier <= 2
+	UnidentifiedItemTier <= 1
 	BaseEnergyShield > 0
 	BaseEvasion 0
 	BaseArmour > 0
-	Rarity Rare  Magic
+	Rarity Rare 
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	AreaLevel >= 65
-	ItemLevel <= 79
-	SetFontSize 23
+	AreaLevel >= 70
+	SetFontSize 32
 	SetBackgroundColor 20 20 0 0
 
 #迴避能量	
 Hide 
-	UnidentifiedItemTier <= 2
+	UnidentifiedItemTier <= 1
 	BaseEnergyShield > 0
 	BaseEvasion > 0
 	BaseArmour 0
 	Rarity Rare  Magic
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	AreaLevel >= 65
-	ItemLevel <= 79
-	SetFontSize 23
+	AreaLevel >= 70
+    SetFontSize 32
 	SetBackgroundColor 20 20 0 0
 	
-#地圖階段65以上隱藏其他全部階級２以下　〔魔法級〕 武器、裝備
+#地圖階段70以上隱藏其他全部階級２以下　〔魔法級〕 武器、裝備
 #若前面樓層符合特殊基底條件將不會被隱藏
 Hide 
 	UnidentifiedItemTier <= 2
 	Rarity = Magic
 	Class == "Bows" "Crossbows" "One Hand Maces" "Quarterstaves" "Quivers" "Sceptres" "Spears" "Staves" "Two Hand Maces" "Wands" "Talismans" 
-	AreaLevel >= 65
-	ItemLevel <= 80
-	SetFontSize 20
+	AreaLevel >= 70
+	SetFontSize 30
 	SetBackgroundColor 20 20 0 0
 	
 #護甲類	
@@ -10761,9 +10461,8 @@ Hide
 	BaseArmour > 0
 	Rarity = Magic
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	AreaLevel >= 65
-	ItemLevel <= 80
-	SetFontSize 20
+	AreaLevel >= 70
+	SetFontSize 30
 	SetBackgroundColor 20 20 0 0
 
 #迴避甲	
@@ -10774,9 +10473,8 @@ Hide
 	BaseArmour 0
 	Rarity = Magic
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	AreaLevel >= 65
-	ItemLevel <= 80
-	SetFontSize 20
+	AreaLevel >= 70
+	SetFontSize 30
 	SetBackgroundColor 20 20 0 0
 
 #能量甲	
@@ -10787,9 +10485,8 @@ Hide
 	BaseArmour 0
 	Rarity = Magic
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	AreaLevel >= 65
-	ItemLevel <= 80
-	SetFontSize 20
+	AreaLevel >= 70
+	SetFontSize 30
 	SetBackgroundColor 20 20 0 0
 
 #護甲迴避	
@@ -10800,9 +10497,8 @@ Hide
 	BaseArmour > 0
 	Rarity = Magic
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	AreaLevel >= 65
-	ItemLevel <= 80
-	SetFontSize 20
+	AreaLevel >= 70
+	SetFontSize 30
 	SetBackgroundColor 20 20 0 0
 
 #護甲能量	
@@ -10813,9 +10509,8 @@ Hide
 	BaseArmour > 0
 	Rarity = Magic
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	AreaLevel >= 65
-	ItemLevel <= 80
-	SetFontSize 20
+	AreaLevel >= 70
+	SetFontSize 30
 	SetBackgroundColor 20 20 0 0
 
 #迴避能量	
@@ -10826,9 +10521,8 @@ Hide
 	BaseArmour 0
 	Rarity = Magic
 	Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-	AreaLevel >= 65
-	ItemLevel <= 80
-	SetFontSize 20
+	AreaLevel >= 70
+	SetFontSize 30
 	SetBackgroundColor 20 20 0 0
 
 #飾品類
@@ -10838,31 +10532,10 @@ Hide
 	UnidentifiedItemTier <= 2
 	Rarity Rare Magic
 	Class == "Amulets" "Rings" "Belts"
-    AreaLevel >= 65
-	ItemLevel <= 80
-	SetFontSize 20
+    AreaLevel >= 70
+	SetFontSize 34
 	SetBackgroundColor 20 20 0 0
 	
-#隱藏其他全部防具類魔法物品
-Hide 
-Quality <= 20
-Rarity = Magic
-Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
-AreaLevel >= 65
-ItemLevel <= 80
-SetFontSize 25
-SetBackgroundColor 20 20 0 0
-
-#隱藏其他全部武器類魔法物品
-Hide 
-Quality <= 20
-Rarity = Magic
-Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
-AreaLevel >= 65
-ItemLevel <= 80
-SetFontSize 25
-SetBackgroundColor 20 20 0 0
-
 #------------------------------------
 #   [17F-3]隱藏 品質19以下未鑑定白色
 #------------------------------------
@@ -10873,7 +10546,7 @@ Quality <= 19
 Rarity = Normal
 Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
 AreaLevel >= 65
-SetFontSize 25
+SetFontSize 30
 SetBackgroundColor 20 20 0 0
 
 Hide
@@ -10881,88 +10554,81 @@ Quality <= 19
 Rarity = Normal
 Class "Amulets" "Rings" "Belts"
 AreaLevel >= 65
-SetFontSize 25
+SetFontSize 36
 
 Hide
 Quality <= 19
 Rarity = Normal
 Class "Flasks" "Life Flasks" "Mana Flasks" "Charms"
 AreaLevel >= 65
-SetFontSize 25
+SetFontSize 34
+
+#隱藏其他全部防具類魔法物品
+Hide 
+Quality <= 19
+Rarity = Magic
+Class == "Body Armours" "Boots" "Bucklers" "Foci" "Gloves" "Helmets" "Shields"
+AreaLevel >= 65
+SetFontSize 32
+SetBackgroundColor 20 20 0 0
+
+#隱藏其他全部武器類魔法物品
+Hide 
+Quality <= 19
+Rarity = Magic
+Class "Talismans" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Quivers" "Shields" "Foci" "Gloves" "Boots" "Body Armours" "Helmets"
+AreaLevel >= 65
+SetFontSize 32
+SetBackgroundColor 20 20 0 0
 #------------------------------------
 #   [17F-8]隱藏 高等地圖寶石、符石、珠寶(預設開啟)
 #------------------------------------
-##隱藏高等地圖的技能寶石與精魂寶石
+##隱藏高等地圖的技能寶石
 #
 Hide
 GemLevel 18
-BaseType "Uncut Skill Gem" "Skill Gem" "Uncut Spirit Gem" "Spirit Gem"
+BaseType "Uncut Skill Gem" "Skill Gem" "Uncut Spirit Gem" 
 AreaLevel >= 80
 SetFontSize 42
 SetTextColor 255 200 255
 SetBorderColor 255 200 255
 SetBackgroundColor 0 0 0
-SetFontSize 30
 
 Hide
 GemLevel 17
-BaseType "Uncut Skill Gem" "Skill Gem" "Uncut Spirit Gem" "Spirit Gem"
+BaseType "Uncut Skill Gem" "Skill Gem" "Uncut Spirit Gem" 
 AreaLevel >= 79
 SetFontSize 42
 SetTextColor 255 200 255
 SetBorderColor 255 200 255
 SetBackgroundColor 0 0 0
-SetFontSize 30
 
 Hide 
 GemLevel 16
-BaseType "Uncut Skill Gem" "Skill Gem" "Uncut Spirit Gem" "Spirit Gem"
+BaseType "Uncut Skill Gem" "Skill Gem" "Uncut Spirit Gem" 
 AreaLevel >= 76
 SetFontSize 42
 SetTextColor 255 200 255
 SetBorderColor 255 200 255
 SetBackgroundColor 0 0 0
-SetFontSize 30
 
 Hide 
 GemLevel 15
-BaseType "Uncut Skill Gem" "Skill Gem" "Uncut Spirit Gem" "Spirit Gem"
-AreaLevel >= 69
+BaseType "Uncut Skill Gem" "Skill Gem" "Uncut Spirit Gem"
+AreaLevel >= 74
 SetFontSize 42
 SetTextColor 255 200 255
 SetBorderColor 255 200 255
 SetBackgroundColor 0 0 0
-SetFontSize 30
 
 Hide 
 GemLevel 14
-BaseType "Uncut Skill Gem" "Skill Gem" "Uncut Spirit Gem" "Spirit Gem"
-AreaLevel >= 66
+BaseType "Uncut Skill Gem" "Skill Gem" "Uncut Spirit Gem"
+AreaLevel >= 70
 SetFontSize 42
 SetTextColor 255 200 255
 SetBorderColor 255 200 255
 SetBackgroundColor 0 0 0
-SetFontSize 30
-
-Hide 
-GemLevel 13
-BaseType "Uncut Skill Gem" "Skill Gem" "Uncut Spirit Gem" "Spirit Gem"
-AreaLevel >= 63
-SetFontSize 42
-SetTextColor 255 200 255
-SetBorderColor 255 200 255
-SetBackgroundColor 0 0 0
-SetFontSize 30
-
-Hide 
-GemLevel 12
-BaseType "Uncut Skill Gem" "Skill Gem" "Uncut Spirit Gem" "Spirit Gem"
-AreaLevel >= 57
-SetFontSize 42
-SetTextColor 255 200 255
-SetBorderColor 255 200 255
-SetBackgroundColor 0 0 0
-SetFontSize 30
 
 ##隱藏80+等地圖的符文類
 Hide 
@@ -10993,7 +10659,6 @@ Hide
 AreaLevel >= 78
 Class "Shard"
 SetFontSize 20
-
 
 ###可選遮蔽規則-非特殊基底裝以外 『全部』 的90物等以下"白色、魔法"武器、防具
 ## Uncomment this rule to hide low level rares in high level zones
@@ -11039,7 +10704,6 @@ SetBackgroundColor 20 20 0 0
 #   [17F-8]遮蔽地圖&鑰匙(預設開啟)
 #------------------------------------
 ## 取消註解來隱藏各階地圖&鑰匙
-
 # 地區70以上(T6)隱藏全部低階地圖T1~T3
 Hide
 WaystoneTier <= 3
@@ -11097,6 +10761,56 @@ SetFontSize 25
 ##【18F全域顯示設定】Global Display Settings
 ##勿改勿刪##Do not modify or delet
 #--------------------------
+#--------------------------
+##【18F-1 全域和與圖階段顯示】
+#--------------------------	 
+#地圖階段顯示其餘一般稀有武器、防具
+Show
+AreaLevel <= 79
+Rarity = Rare
+Class "Gloves" "Boots" "Helmets"
+SetBorderColor 153 204 255
+SetBackgroundColor 108 108 108
+SetFontSize 36
+
+Hide
+AreaLevel <= 79
+Rarity = Rare
+Class ==  "Quarterstaves" "Talismans" "Body Armours" "Sceptres" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" 
+SetBorderColor 153 204 255
+SetBackgroundColor 108 108 108
+SetFontSize 36
+
+#全域顯示白色/魔法飾品腰帶
+Show
+Class "Rings" "Amulets" "Belts"
+Rarity <= Magic
+SetBorderColor 128 128 128
+SetFontSize 38
+
+#全域顯示一般稀有飾品腰帶
+Show
+Rarity = Rare
+Class "Rings" "Amulets" "Belts"
+SetBorderColor 200 200 200
+SetBackgroundColor 64 64 64
+SetFontSize 40
+
+#全域顯示一般稀有武器、防具
+Show
+Rarity = Rare
+Class "Gloves" "Boots" "Helmets"
+SetBorderColor 153 204 255
+SetBackgroundColor 108 108 108
+SetFontSize 36
+
+Hide
+Rarity = Rare
+Class ==  "Quarterstaves" "Talismans" "Body Armours" "Sceptres" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" 
+SetBorderColor 153 204 255
+SetBackgroundColor 108 108 108
+SetFontSize 36
+
 # 任務物品、地區物品
 Show
 Class "Quest Items" "Instance Local Items"
@@ -11205,7 +10919,7 @@ PlayEffect White
 SetFontSize 45
 DisableDropSound True
 
-#全域-技能寶石 精魂寶石
+#全域-未切割技能寶石 精魂寶石
 Show
 BaseType "Uncut Skill Gem" "Skill Gem" "Unearth" 
 SetTextColor 255 200 255
@@ -11223,13 +10937,13 @@ DisableDropSound True
 Show
 AreaLevel >= 79
 Rarity = Rare
-Class "Quarterstaves" "Talismans" "Gloves" "Boots" "Body Armours" "Helmets"
+Class "Gloves" "Boots" "Helmets"
 SetFontSize 35
 
 Hide
 AreaLevel <= 79
 Rarity = Rare
-Class ==  "Sceptres" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" 
+Class ==  "Quarterstaves" "Talismans" "Body Armours" "Sceptres" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" 
 SetFontSize 35
 
 #全域-地圖階段顯示稀有飾品、腰帶(預設開啟)
@@ -11246,15 +10960,14 @@ SetFontSize 37
 Show
 AreaLevel >= 80
 Rarity = Rare
-Class "Quarterstaves" "Talismans" "Gloves" "Boots" "Body Armours" "Helmets"
+Class "Gloves" "Boots" "Helmets"
 SetFontSize 30
 
 Hide
 AreaLevel >= 80
 Rarity = Rare
-Class ==  "Sceptres" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" 
+Class ==  "Quarterstaves" "Talismans" "Body Armours" "Sceptres" "Bucklers" "Claws" "Daggers" "Wands" "One Hand Axes" "One Hand Maces" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" 
 SetFontSize 30
-
 
 #全域-速刷80以上顯示稀有一般飾品、腰帶(預設開啟)
 #如果前面已設定遮蔽則不會顯示
@@ -11274,7 +10987,7 @@ SetFontSize 32
 # Not working! Please leave a message on the live Twitch 
 #未知貨幣 Unknown currency
 Show
-Class == "Stackable Currency"
+Class "Stackable Currency"
 SetTextColor 255 0 0
 SetBorderColor 255 255 255
 SetBackgroundColor 0 255 0 
@@ -11285,7 +10998,7 @@ DisableDropSound True
 
 #未知鑲嵌 Unknown Socketable
 Show
-Class " Socketable"
+Class "Socketable" "Augment"
 SetTextColor 255 0 0
 SetBorderColor 255 255 255
 SetBackgroundColor 0 255 0 
@@ -11398,7 +11111,7 @@ PlayEffect Green
 SetFontSize 50
 DisableDropSound True
 
-#未知核心
+#未知增幅
 Show 
 Class "Augment"
 SetTextColor 255 0 0
